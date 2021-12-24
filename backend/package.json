@@ -1,0 +1,7 @@
+{
+  "name": "Server",
+  "version": "1.0.0",
+  "description": "App server",
+  "main": "index.js",
+  "license": "MIT"
+}
