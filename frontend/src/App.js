@@ -1,13 +1,14 @@
 import "./App.css";
 import React from "react";
 import "tailwindcss/tailwind.css";
+import Form from "./components/molecules/form";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="font-family-inherit text-lg bold text-purple-600">
-        Hello Peers
-      </h1>
+      <div className="bg-grey-600  min-h-screen grid content-center">
+        <Form />
+      </div>
     </div>
   );
 }
