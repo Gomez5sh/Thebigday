@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "tailwindcss/tailwind.css";
 import img from "../../assets/image-01.svg";
 
 const Form = () => {
+  const [fomrState, setFormState] = useState({
+    name: "",
+    email: "",
+    age: "",
+  });
+
+  const onFinis = (event) => {
+    event.preventDefault();
+    console.log(fomrState);
+  };
   return (
     <div className="flex max-w-4xl my-0 mx-auto p-6 rounded-lg bg-white shadow-xl items-center">
       <div className="flex flex-col left-0">
         <img src={img} alt="logo" className="w-full px-6" />
       </div>
       <div className="flex flex-col right-0">
-        <form action="form">
+        <form action="form" onSubmit={onFinis}>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3">
               <label
@@ -23,6 +33,12 @@ const Form = () => {
                 id="grid-first-name"
                 type="text"
                 placeholder="Nombre"
+                onChange={(event) => {
+                  setFormState({
+                    ...fomrState,
+                    name: event.target.value,
+                  });
+                }}
               />
             </div>
             <div className="w-full px-3">
@@ -37,6 +53,12 @@ const Form = () => {
                 id="grid-email"
                 type="email"
                 placeholder="Email"
+                onChange={(event) => {
+                  setFormState({
+                    ...fomrState,
+                    email: event.target.value,
+                  });
+                }}
               />
             </div>
             <div className="w-full px-3">
@@ -51,6 +73,12 @@ const Form = () => {
                 id="grid-age"
                 type="number"
                 placeholder="Edad"
+                onChange={(event) => {
+                  setFormState({
+                    ...fomrState,
+                    age: event.target.value,
+                  });
+                }}
               />
             </div>
             <div className="w-full px-3 m-1 max-w-lg">
