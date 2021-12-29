@@ -17,9 +17,20 @@ git clone https://github.com/Gomez5sh/Thebigday.git
 
 * Also you can only use `source env/bin/activate`
 
+6. Run docker to mysql db `docker-compose up`
+
+* To stop use `docker-compose stop`
 
 7. Migrate existing db tables by running `python manage.py migrate`
 
 8. Run the django collectstatic `python manage.py collectstatic`
 
 9. Run the django development server using `python manage.py runserver`
+
+## Information to admin django
+```python
+python manage.py createsuperuser
+```
+| user | password | Description |
+| ----- | ----- | ------ |
+| admin | 12345678 | Admin |
