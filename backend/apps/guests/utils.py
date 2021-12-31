@@ -5,7 +5,7 @@ class Util:
 
     def send_sms(body, to):
 
-        account_sid = 'AC692352cdfe901c27f1813f75491b4796' 
+        account_sid = 'AC692352cdfe901c27f1813f75491b4796' + 'prueba' 
         auth_token = '2362829a755a7699a625420ab1f32172' 
         client = Client(account_sid, auth_token) 
         
