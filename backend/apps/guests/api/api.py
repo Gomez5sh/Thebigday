@@ -4,8 +4,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from apps.guests.api.serializers import guestSerializer
 from apps.guests.models import Guests
-import json
-from django.http import HttpResponse
+from apps.guests.utils import Util
+from apps.guests.tasks.tasks import create_random_user_accounts
 
 class getGuestsAPIView(ListAPIView):
     '''Return all guests'''
@@ -37,3 +37,35 @@ class postSingleGuestAPIView(CreateAPIView):
         serializer_post.save()
         return Response(serializer_post.data, status= status.HTTP_201_CREATED)
 
+
+class postGuestsSENDinvitationAPIView(APIView):
+    ''' Send SMS invitation to all guests'''
+    serializer_class = guestSerializer
+
+    def post(self, request):
+        guests = Guests.objects.all()
+
+        invited = []
+        # TODO: create a task to send SMS
+        # sent_sms.delay(len(invited))
+        for guest in guests:
+            sms_body = f"Hola {guest.first_name} {guest.last_name} has sido invitado a la boda de David Peralta y Viviana Sandoval que se llevará a cabo el xx/xx/xxxx"
+            try:
+                # Util.send_sms(sms_body, guest.phone_number)
+                print('Sending sms to ' + guest.phone_number)
+            except Exception as e:
+                print('Error sending sms')
+                message = {
+                    'error': 'Error sending SMSes to all guests',
+                    'SMSes sent successfully': invited,
+                    'count': len(invited),
+                    'error message': str(e)
+                }
+                return Response(message, status=status.HTTP_400_BAD_REQUEST)
+            invited.append({'phone_number': guest.phone_number, 'full_name': guest.first_name + ' ' + guest.last_name})
+
+        message = {
+            'SMSes sent successfully': invited,
+            'count': len(invited),
+        }
+        return Response(message, status= status.HTTP_202_ACCEPTED)

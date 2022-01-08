@@ -21,3 +21,4 @@ image-quality==1.2.7
 django-import-export==2.5.0
 django-environ==0.4.5
 jet-django==1.1.1
+celery==5.2.3
