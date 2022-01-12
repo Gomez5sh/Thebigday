@@ -1,12 +1,13 @@
-import "./App.css";
 import React from "react";
 import "tailwindcss/tailwind.css";
 import Form from "./components/molecules/form";
+import Navbar from "./components/molecules/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<h1>Home</h1>} />
         <Route path="galery" element={<h1>Galery</h1>} />
