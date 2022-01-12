@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from apps.guests.api.serializers import guestSerializer
 from apps.guests.models import Guests
 from apps.guests.utils import Util
-from apps.guests.tasks.tasks import create_random_user_accounts
 
 class getGuestsAPIView(ListAPIView):
     '''Return all guests'''
@@ -46,15 +45,11 @@ class postGuestsSENDinvitationAPIView(APIView):
         guests = Guests.objects.all()
 
         invited = []
-        # TODO: create a task to send SMS
-        # sent_sms.delay(len(invited))
         for guest in guests:
             sms_body = f"Hola {guest.first_name} {guest.last_name} has sido invitado a la boda de David Peralta y Viviana Sandoval que se llevará a cabo el xx/xx/xxxx"
             try:
-                # Util.send_sms(sms_body, guest.phone_number)
-                print('Sending sms to ' + guest.phone_number)
+                Util.send_sms.delay(sms_body, guest.phone_number)
             except Exception as e:
-                print('Error sending sms')
                 message = {
                     'error': 'Error sending SMSes to all guests',
                     'SMSes sent successfully': invited,
