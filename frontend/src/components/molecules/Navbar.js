@@ -4,50 +4,48 @@ import "tailwindcss/tailwind.css";
 
 const Navbar = () => {
   return (
-    <div className="bg-white">
-      <div className="--tw-bg-opacity min-h-screm mx-auto max-w-8xl p-2 m-2">
-        <div className="flex justify-between items-center">
-          <div className="flex left-2">
-            <h1 className="font-family-Roboto-Slab font-bold text-black text-2xl not-italic static left: 2.78%;">
-              THE BIG DAY
-            </h1>
-          </div>
-          <div className="flex items-center space-x-3">
-            <ul className="flex justify-between p-6">
-              <li>
-                <NavLink
-                  to="/"
-                  className="font-family-Roboto p-4 text-black text-lg"
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/galery"
-                  className="font-family-Roboto p-4 text-black text-lg"
-                >
-                  Galery
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="#PlayList"
-                  className="font-family-Roboto p-4 text-black text-lg"
-                >
-                  Play List
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/donations"
-                  className="font-family-Roboto p-4 text-black text-lg border-2 border-black rounded"
-                >
-                  Donation
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+    <div className="max-w-auto h-16 left-0 top-0 bg-white backdrop-blur-lg">
+      <div className="p-2 flex justify-between items-center">
+        <div className="static left-2 -right-1/3 top-1/4 bottom-1/4">
+          <h1 className="font-sans font-family:Roboto font-bold text-black p-2 text-2xl not-italic static left: 2.78%;">
+            THE BIG DAY
+          </h1>
+        </div>
+        <div className="p-2 flex justify-between items-center">
+          <ul className="flex justify-between p-2">
+            <li>
+              <NavLink
+                to="/"
+                className="font-sans font-family-Roboto not-italic text-xl p-2 text-black flex items-center text-right"
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/galery"
+                className="font-sans font-family-Roboto not-italic text-xl p-2 text-black flex items-center text-right"
+              >
+                Galery
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="#PlayList"
+                className="font-sans font-family-Roboto not-italic text-xl p-2 text-black flex items-center text-right"
+              >
+                Play List
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/donations"
+                className="font-sans font-family-Roboto not-italic text-xl p-2 text-black flex items-center text-right border-solid rounded-md border-black border-2"
+              >
+                Donation
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

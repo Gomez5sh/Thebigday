@@ -7,24 +7,26 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
-        <Route path="galery" element={<h1>Galery</h1>} />
-        <Route path="signs" element={<h1>Sings</h1>} />
-        <Route path="/invitation/:id" element={<h1>Invitations</h1>} />
-        <Route
-          path="/form"
-          element={
-            <div className="App">
-              <div className="bg-grey-600  min-h-screen grid content-center">
-                <Form />
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-white">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<h1>Home</h1>} />
+          <Route path="galery" element={<h1>Galery</h1>} />
+          <Route path="signs" element={<h1>Sings</h1>} />
+          <Route path="/invitation/:id" element={<h1>Invitations</h1>} />
+          <Route
+            path="/form"
+            element={
+              <div className="App">
+                <div className="bg-grey-600  min-h-screen grid content-center">
+                  <Form />
+                </div>
               </div>
-            </div>
-          }
-        />
-        <Route path="*" element={<h1>404</h1>} />
-      </Routes>
+            }
+          />
+          <Route path="*" element={<h1>404</h1>} />
+        </Routes>
+      </div>
     </Router>
   );
 }
