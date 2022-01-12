@@ -19,3 +19,16 @@ class Guests(models.Model):
        return f'{self.phone_number} {self.first_name} {self.last_name}'
 
 
+class Songs(models.Model):
+    title = models.CharField('Titulo', max_length=255, null=False, blank=False)
+    artist = models.CharField('Artista', max_length=255, null=False, blank=False)
+    image = models.ImageField('Imagen', upload_to='static/images/songs', null=True, blank=True)
+    song_url = models.URLField('URL de la cancion', max_length=255, null=True, blank=True)
+    duration = models.CharField('Duración', max_length=255, null=False, blank=False)
+
+    class Meta:
+        verbose_name = 'Canción'
+        verbose_name_plural = 'Canciones'
+
+    def __str__(self):
+        return f'{self.title}'
