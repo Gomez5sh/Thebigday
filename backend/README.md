@@ -10,6 +10,7 @@ git clone https://github.com/Gomez5sh/Thebigday.git
 1. Ensure you have python3.8 and Docker installed
 
 * if needed install libmysqlclient-dev -> sudo apt-get install libmysqlclient-dev
+* Intall and run RabbitMQ
 
 2. Clone the repository
 
@@ -30,6 +31,8 @@ git clone https://github.com/Gomez5sh/Thebigday.git
 8. Run the django collectstatic `python manage.py collectstatic`
 
 9. Run the django development server using `python manage.py runserver`
+
+10. Run celery to run the tasks `celery -A backend worker -l info`
 
 ## Information to admin django
 ```python
