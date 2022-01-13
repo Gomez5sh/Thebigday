@@ -16,7 +16,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/"
-                className="font-sans font-family-Roboto not-italic text-xl p-2 text-black flex items-center text-right"
+                className="font-sans font-family-Roboto not-italic text-xl p-2 text-black flex items-center text-right hover:text-[#9F7A6E] transition-colors"
               >
                 Home
               </NavLink>
@@ -24,7 +24,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/galery"
-                className="font-sans font-family-Roboto not-italic text-xl p-2 text-black flex items-center text-right"
+                className="font-sans font-family-Roboto not-italic text-xl p-2 text-black flex items-center text-right hover:text-[#9F7A6E] transition-colors"
               >
                 Galery
               </NavLink>
@@ -32,7 +32,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="#PlayList"
-                className="font-sans font-family-Roboto not-italic text-xl p-2 text-black flex items-center text-right"
+                className="font-sans font-family-Roboto not-italic text-xl p-2 text-black flex items-center text-right hover:text-[#9F7A6E] transition-colors"
               >
                 Play List
               </NavLink>
@@ -40,7 +40,8 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/donations"
-                className="font-sans font-family-Roboto not-italic text-xl p-2 text-black flex items-center text-right border-solid rounded-md border-black border-2"
+                className="font-sans font-family-Roboto not-italic text-xl py-1 px-6 text-black flex items-center text-right border-solid rounded-md border-black border 
+                hover:bg-[#9F7A6E] hover:text-white hover:border-white transition-colors shadow-xl shadow-[#9F7A6E]/20 hover:shadow-grey-200/20"
               >
                 Donation
               </NavLink>

@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div className="absolute top-0 left-0 right-0 bottom-0 bg-white">
+      <div className="absolute top-0 left-0 right-0 bottom-0 h-screen bg-white">
         <Navbar />
         <Routes>
           <Route path="/" element={<h1>Home</h1>} />
