@@ -3,12 +3,13 @@ import "tailwindcss/tailwind.css";
 import Form from "./components/molecules/form";
 import Navbar from "./components/molecules/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Footer from "./components/molecules/Footer";
 
 function App() {
   return (
     <Router>
-      <div className="absolute top-0 left-0 right-0 bottom-0 h-screen bg-white">
-        <Navbar />
+      <Navbar />
+      <div className="bg-white">
         <Routes>
           <Route path="/" element={<h1>Home</h1>} />
           <Route path="galery" element={<h1>Galery</h1>} />
@@ -26,6 +27,10 @@ function App() {
           />
           <Route path="*" element={<h1>404</h1>} />
         </Routes>
+        {/* FOOTER */}
+        <footer className="bg-red-200 text-black pt-20 pb-5">
+          <Footer />
+        </footer>
       </div>
     </Router>
   );

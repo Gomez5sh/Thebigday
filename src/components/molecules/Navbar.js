@@ -41,7 +41,7 @@ const Navbar = () => {
               <NavLink
                 to="/donations"
                 className="font-sans font-family-Roboto not-italic text-xl py-1 px-6 text-black flex items-center text-right border-solid rounded-md border-black border 
-                hover:bg-[#9F7A6E] hover:text-white hover:border-white transition-colors shadow-xl shadow-[#9F7A6E]/20 hover:shadow-grey-200/20"
+                hover:bg-[#9F7A6E] hover:text-white hover:border-black/10 transition-colors shadow-xl shadow-[#9F7A6E]/20 hover:shadow-[#9F7A6E]"
               >
                 Donation
               </NavLink>
