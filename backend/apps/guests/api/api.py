@@ -2,8 +2,8 @@ from rest_framework import status
 from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from apps.guests.api.serializers import guestSerializer
-from apps.guests.models import Guests
+from apps.guests.api.serializers import SongsSerializer, guestSerializer
+from apps.guests.models import Guests, Songs
 from apps.guests.utils import Util
 
 class getGuestsAPIView(ListAPIView):
@@ -64,3 +64,11 @@ class postGuestsSENDinvitationAPIView(APIView):
             'count': len(invited),
         }
         return Response(message, status= status.HTTP_202_ACCEPTED)
+
+class getSongsAPIView(ListAPIView):
+    ''' Get list of weeding songs'''
+    serializer_class = SongsSerializer
+    queryset = Songs.objects.all()
+
+    def get_queryset(self):
+        return self.queryset
