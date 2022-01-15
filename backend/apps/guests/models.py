@@ -25,6 +25,7 @@ class Songs(models.Model):
     image = models.ImageField('Imagen', upload_to='static/images/songs', null=True, blank=True)
     song_url = models.URLField('URL de la cancion', max_length=255, null=True, blank=True)
     duration = models.CharField('Duración', max_length=255, null=False, blank=False)
+    lyrics = models.TextField('Letra', blank=True)
 
     class Meta:
         verbose_name = 'Canción'
