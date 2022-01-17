@@ -8,9 +8,8 @@ import Footer from "./components/molecules/Footer";
 function App() {
   return (
     <Router>
-      <header>
-        <Navbar />
-      </header>
+      <Navbar />
+      <header></header>
       <div className="bg-white">
         <section>
           <Routes>
@@ -35,7 +34,7 @@ function App() {
           <h1>prueba</h1>
         </section>
         {/* FOOTER */}
-        <footer className="bg-red-200 text-black pt-20 pb-5">
+        <footer className="text-black pt-20 pb-5">
           <Footer />
         </footer>
       </div>
