@@ -2,7 +2,7 @@ from django.urls import path
 from django.urls.resolvers import URLPattern
 from apps.guests.api.api import getGuestsAPIView, getSingleGuestAPIView
 from apps.guests.api.api import postSingleGuestAPIView, postGuestsSENDinvitationAPIView
-from apps.guests.api.api import getSongsAPIView
+from apps.guests.api.api import getSongsAPIView, CommentDonationsAPIView
 
 urlpatterns = [
     path('guests/', getGuestsAPIView.as_view(), name='guests'),
@@ -10,4 +10,5 @@ urlpatterns = [
     path('single_guest/', postSingleGuestAPIView.as_view(), name='post_guest'),
     path('send_invitations/', postGuestsSENDinvitationAPIView.as_view(), name='send_invitations'),
     path('songs/', getSongsAPIView.as_view(), name='songs'),
+    path('donation/message/', CommentDonationsAPIView.as_view(), name='donation_message'),
 ]

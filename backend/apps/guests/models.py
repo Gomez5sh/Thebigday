@@ -8,7 +8,7 @@ class Guests(models.Model):
     second_name = models.CharField('Segundo nombre', max_length=80, null=True, blank=True)
     last_name = models.CharField('Primer apellido', max_length=80, null=False, blank=False)
     sec_last_name = models.CharField('Segundo apellido', max_length=80, null=True, blank=True)
-    email = models.EmailField('Correo Electronico', max_length=255, null=True)
+    email = models.EmailField('Correo Electronico', max_length=255, null=True, unique=True)
     phone_number = models.CharField('Número Celular',max_length=255, blank=False, null=False, unique=True)
 
     class Meta:
@@ -22,7 +22,7 @@ class Guests(models.Model):
 class Songs(models.Model):
     title = models.CharField('Titulo', max_length=255, null=False, blank=False)
     artist = models.CharField('Artista', max_length=255, null=False, blank=False)
-    image = models.ImageField('Imagen', upload_to='static/images/songs', null=True, blank=True)
+    image = models.ImageField('Imagen', upload_to='backend/static/images/songs', null=True, blank=True)
     song_url = models.URLField('URL de la cancion', max_length=255, null=True, blank=True)
     duration = models.CharField('Duración', max_length=255, null=False, blank=False)
     lyrics = models.TextField('Letra', blank=True)
@@ -33,3 +33,15 @@ class Songs(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+
+class DonationMessajes(models.Model):
+    full_name = models.CharField('Nombre Completo', max_length=255, null=False, blank=False)
+    message = models.TextField('Mensaje', blank=False)
+    relationship = models.CharField('Relacion', max_length=255, null=False, blank=False)
+    class Meta:
+        verbose_name = 'Comentario'
+        verbose_name_plural = 'Comentarios'
+
+    def __str__(self):
+        return f'{self.full_name} {self.message}'
