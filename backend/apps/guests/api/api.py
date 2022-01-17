@@ -2,8 +2,8 @@ from rest_framework import status
 from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from apps.guests.api.serializers import SongsSerializer, guestSerializer
-from apps.guests.models import Guests, Songs
+from apps.guests.api.serializers import SongsSerializer, guestSerializer, DonationMessajesSerializer
+from apps.guests.models import Guests, Songs, DonationMessajes
 from apps.guests.utils import Util
 
 class getGuestsAPIView(ListAPIView):
@@ -72,3 +72,20 @@ class getSongsAPIView(ListAPIView):
 
     def get_queryset(self):
         return self.queryset
+
+
+class CommentDonationsAPIView(CreateAPIView):
+    '''POST and GET comment to donation'''
+    serializer_class = DonationMessajesSerializer
+
+    def post(self, request):
+        new_comment = request.data
+        serializer_post = self.serializer_class(data= new_comment)
+        serializer_post.is_valid(raise_exception=True)
+        serializer_post.save()
+        return Response(serializer_post.data, status= status.HTTP_201_CREATED)
+
+    def get(self, request):
+        comments = DonationMessajes.objects.all()
+        serializer_get = self.serializer_class(comments, many=True)
+        return Response(serializer_get.data)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.guests.models import Guests, Songs
+from apps.guests.models import Guests, Songs, DonationMessajes
 from import_export.admin import ImportExportActionModelAdmin
 
 from django.dispatch import receiver
@@ -14,6 +14,7 @@ class ImportGuestsViewAdmin(ImportExportActionModelAdmin):
     pass
 
 admin.site.register(Songs)
+admin.site.register(DonationMessajes)
 
 # @receiver(post_import, dispatch_uid='balabala...')
 # def _post_import(model, **kwargs):
