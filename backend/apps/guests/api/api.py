@@ -5,6 +5,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from apps.guests.api.serializers import SongsSerializer, gallerySerializer, guestSerializer, pictureSerializer
 from apps.guests.models import Guests, Songs, gallery, picture
+from apps.guests.api.serializers import DonationMessajesSerializer
+from apps.guests.models import DonationMessajes
 from apps.guests.utils import Util
 
 class getGuestsAPIView(ListAPIView):
@@ -83,4 +85,20 @@ class getPicturesGalleryAPIView(ListAPIView):
         gallery_name = self.kwargs['gallery_name']
         id_gallery = self.queryset.filter(title=gallery_name).values('id')[0]['id']
         return picture.objects.filter(gallery_id= id_gallery)
+
+class CommentDonationsAPIView(CreateAPIView):
+    '''POST and GET comment to donation'''
+    serializer_class = DonationMessajesSerializer
+
+    def post(self, request):
+        new_comment = request.data
+        serializer_post = self.serializer_class(data= new_comment)
+        serializer_post.is_valid(raise_exception=True)
+        serializer_post.save()
+        return Response(serializer_post.data, status= status.HTTP_201_CREATED)
+
+    def get(self, request):
+        comments = DonationMessajes.objects.all()
+        serializer_get = self.serializer_class(comments, many=True)
+        return Response(serializer_get.data)
 
