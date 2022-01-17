@@ -40,7 +40,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/donations"
-                className="font-sans font-family-Roboto not-italic text-xl mx-6 py-1 px-6 text-black flex line-heigh leading-5 titems-center text-right border-solid rounded-md border-black border 
+                className="font-sans font-family-Roboto not-italic text-xl mx-6 py-1 px-6 text-black flex leading-5 items-center text-right border-solid rounded-md border-black border 
                 hover:bg-[#9F7A6E] hover:text-white hover:border-black/10 transition-colors shadow-xl shadow-[#9F7A6E]/30 hover:shadow-[#9F7A6E]/60"
               >
                 Donation
