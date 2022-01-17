@@ -1,9 +1,10 @@
+from cgitb import lookup
 from rest_framework import status
 from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from apps.guests.api.serializers import SongsSerializer, guestSerializer
-from apps.guests.models import Guests, Songs
+from apps.guests.api.serializers import SongsSerializer, gallerySerializer, guestSerializer, pictureSerializer
+from apps.guests.models import Guests, Songs, gallery, picture
 from apps.guests.utils import Util
 
 class getGuestsAPIView(ListAPIView):
@@ -72,3 +73,14 @@ class getSongsAPIView(ListAPIView):
 
     def get_queryset(self):
         return self.queryset
+
+class getPicturesGalleryAPIView(ListAPIView):
+    ''' Get pictures of the weeding'''
+    serializer_class = pictureSerializer
+    queryset = gallery.objects.all()
+
+    def get_queryset(self):
+        gallery_name = self.kwargs['gallery_name']
+        id_gallery = self.queryset.filter(title=gallery_name).values('id')[0]['id']
+        return picture.objects.filter(gallery_id= id_gallery)
+

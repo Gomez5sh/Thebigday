@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 from django.db.models.fields import BLANK_CHOICE_DASH
 
@@ -33,3 +34,10 @@ class Songs(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+class gallery(models.Model):
+    title = models.CharField('Titulo galeria', max_length=255, null=False, blank=False)
+
+class picture(models.Model):
+    gallery = models.ForeignKey(to = gallery, on_delete=models.CASCADE)
+    file = models.ImageField('Imagen', upload_to='static/images/pictures', null=True, blank=True)

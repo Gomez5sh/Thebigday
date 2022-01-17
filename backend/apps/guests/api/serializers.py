@@ -1,5 +1,7 @@
+from dataclasses import field
+from pyexpat import model
 from rest_framework import serializers
-from apps.guests.models import Guests, Songs
+from apps.guests.models import Guests, Songs, picture, gallery
 
 class guestSerializer(serializers.ModelSerializer):
     class Meta:
@@ -9,4 +11,14 @@ class guestSerializer(serializers.ModelSerializer):
 class SongsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Songs
+        fields = '__all__'
+
+class pictureSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = picture
+        fields = '__all__'
+
+class gallerySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = gallery
         fields = '__all__'
