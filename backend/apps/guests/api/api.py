@@ -117,5 +117,5 @@ class getFamilyGroupAPIView(ListAPIView):
         if family_num.count() == 0:
             return Guests.objects.none()
         family_num = family_num[0]['family_group']
-        family_group = Guests.objects.filter(family_group = family_num).exclude(phone_number = family_num)
+        family_group = Guests.objects.filter(family_group = family_num).exclude(phone_number = phone)
         return family_group
