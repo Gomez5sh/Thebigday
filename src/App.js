@@ -4,6 +4,7 @@ import Form from "./components/molecules/form";
 import Navbar from "./components/molecules/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/molecules/Footer";
+import Home from "./components/organisms/Home";
 
 function App() {
   return (
@@ -11,9 +12,9 @@ function App() {
       <Navbar />
       <header></header>
       <div className="bg-white">
-        <section>
+        <div className="h-screen  ">
           <Routes>
-            <Route path="/" element={<h1>Home</h1>} />
+            <Route path="/" element={<Home />} />
             <Route path="galery" element={<h1>Galery</h1>} />
             <Route path="signs" element={<h1>Sings</h1>} />
             <Route path="/invitation/:id" element={<h1>Invitations</h1>} />
@@ -29,10 +30,7 @@ function App() {
             />
             <Route path="*" element={<h1>404</h1>} />
           </Routes>
-        </section>
-        <section>
-          <h1>prueba</h1>
-        </section>
+        </div>
         {/* FOOTER */}
         <footer className="text-black pt-20 pb-5">
           <Footer />

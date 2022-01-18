@@ -17,7 +17,7 @@ const Footer = () => {
           Privacy terms
         </p>
       </div>
-      <div className="flex mb-12 origin-bottom-right mt-2 flex-col mx-24 flex-wrap ">
+      <div className="flex mb-12 origin-bottom-right mt-2 flex-col mx-24 flex-wrap">
         <p className="font-sans not-italic font-normal text-2xl leading-8">
           “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt.”
