@@ -11,6 +11,7 @@ class Guests(models.Model):
     sec_last_name = models.CharField('Segundo apellido', max_length=80, null=True, blank=True)
     email = models.EmailField('Correo Electronico', max_length=255, null=True, unique=True)
     phone_number = models.CharField('Número Celular',max_length=255, blank=False, null=False, unique=True)
+    family_group = models.CharField('Grupo familiar', max_length=80, blank=False, null=False)
 
     class Meta:
         verbose_name = 'Importar invitador'

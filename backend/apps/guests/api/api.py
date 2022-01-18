@@ -106,3 +106,16 @@ class CommentDonationsAPIView(CreateAPIView):
 class getPostSingleImagesAPIView(ListCreateAPIView):
     serializer_class = singleImagesSerializer
     queryset = singleImages.objects.all()
+
+class getFamilyGroupAPIView(ListAPIView):
+    ''' Get family group by the given number'''
+    serializer_class = guestSerializer
+
+    def get_queryset(self):
+        phone= self.kwargs['phone_number']
+        family_num = Guests.objects.filter(phone_number = phone).values('family_group')
+        if family_num.count() == 0:
+            return Guests.objects.none()
+        family_num = family_num[0]['family_group']
+        family_group = Guests.objects.filter(family_group = family_num).exclude(phone_number = family_num)
+        return family_group
