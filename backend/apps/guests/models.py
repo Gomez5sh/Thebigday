@@ -54,3 +54,10 @@ class DonationMessajes(models.Model):
     def __str__(self):
         return f'{self.full_name} {self.message}'
 
+class singleImages(models.Model):
+    file = models.ImageField('Imagen', upload_to='static/images/bigStory', null=False, blank=False)
+    date = models.DateField('Fecha', auto_now_add=True, blank=False)
+    title = models.CharField('Titulo', max_length=255, blank=False)
+    message = models.TextField('Mensaje', blank=False)
+
+
