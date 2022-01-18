@@ -1,4 +1,4 @@
-#!/home/gomezsh/Documents/code/Thebigday/backend/virtual/bin/python3
+#!/home/gomezsh/Documents/code/Thebigday/backend/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
