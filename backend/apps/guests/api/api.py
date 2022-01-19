@@ -1,11 +1,11 @@
 from cgitb import lookup
 from rest_framework import status
-from rest_framework.generics import CreateAPIView, ListAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView, ListCreateAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from apps.guests.api.serializers import SongsSerializer, gallerySerializer, guestSerializer, pictureSerializer
-from apps.guests.models import Guests, Songs, gallery, picture
-from apps.guests.api.serializers import DonationMessajesSerializer
+from apps.guests.models import Guests, Songs, gallery, picture, singleImages
+from apps.guests.api.serializers import DonationMessajesSerializer, singleImagesSerializer
 from apps.guests.models import DonationMessajes
 from apps.guests.utils import Util
 
@@ -102,3 +102,20 @@ class CommentDonationsAPIView(CreateAPIView):
         serializer_get = self.serializer_class(comments, many=True)
         return Response(serializer_get.data)
 
+
+class getPostSingleImagesAPIView(ListCreateAPIView):
+    serializer_class = singleImagesSerializer
+    queryset = singleImages.objects.all()
+
+class getFamilyGroupAPIView(ListAPIView):
+    ''' Get family group by the given number'''
+    serializer_class = guestSerializer
+
+    def get_queryset(self):
+        phone= self.kwargs['phone_number']
+        family_num = Guests.objects.filter(phone_number = phone).values('family_group')
+        if family_num.count() == 0:
+            return Guests.objects.none()
+        family_num = family_num[0]['family_group']
+        family_group = Guests.objects.filter(family_group = family_num).exclude(phone_number = phone)
+        return family_group

@@ -11,6 +11,7 @@ class Guests(models.Model):
     sec_last_name = models.CharField('Segundo apellido', max_length=80, null=True, blank=True)
     email = models.EmailField('Correo Electronico', max_length=255, null=True, unique=True)
     phone_number = models.CharField('Número Celular',max_length=255, blank=False, null=False, unique=True)
+    family_group = models.CharField('Grupo familiar', max_length=80, blank=False, null=False)
 
     class Meta:
         verbose_name = 'Importar invitador'
@@ -53,4 +54,11 @@ class DonationMessajes(models.Model):
 
     def __str__(self):
         return f'{self.full_name} {self.message}'
+
+class singleImages(models.Model):
+    file = models.ImageField('Imagen', upload_to='static/images/bigStory', null=False, blank=False)
+    date = models.DateField('Fecha', auto_now_add=True, blank=False)
+    title = models.CharField('Titulo', max_length=255, blank=False)
+    message = models.TextField('Mensaje', blank=False)
+
 

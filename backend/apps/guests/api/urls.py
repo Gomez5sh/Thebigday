@@ -3,7 +3,8 @@ from django.urls.resolvers import URLPattern
 from apps.guests.api.api import getGuestsAPIView, getSingleGuestAPIView
 from apps.guests.api.api import postSingleGuestAPIView, postGuestsSENDinvitationAPIView
 from apps.guests.api.api import getSongsAPIView, getPicturesGalleryAPIView
-from apps.guests.api.api import CommentDonationsAPIView
+from apps.guests.api.api import CommentDonationsAPIView, getPostSingleImagesAPIView
+from apps.guests.api.api import getFamilyGroupAPIView
 
 
 urlpatterns = [
@@ -14,4 +15,6 @@ urlpatterns = [
     path('songs/', getSongsAPIView.as_view(), name='songs'),
     path('gallery_images/<gallery_name>', getPicturesGalleryAPIView.as_view(), name='gallery'),
     path('donation/message/', CommentDonationsAPIView.as_view(), name='donation_message'),
+    path('singleImage', getPostSingleImagesAPIView.as_view(), name='singleImage'),
+    path('family_group/<phone_number>', getFamilyGroupAPIView.as_view(), name='family_group'),
 ]
