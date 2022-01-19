@@ -24,6 +24,7 @@ yarn-error.log*
 
 backend/static/*
 backend/views/*
+backend/virtual/*
 migrations
 __pycache__
 backend/database
