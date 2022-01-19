@@ -1,10 +1,11 @@
 import React from "react";
+import CountDown from "../molecules/CountDown";
 import sectionOneImage from "../../assets/section-one-home.jpg";
 
 const Home = () => {
   return (
     <div>
-      <section className="flex p-1 justify-between w-full p-10 items-center ">
+      <section className="flex justify-between w-full p-10 items-center ">
         <div className="flex mb-12 origin-bottom-left w-1/3 m-2 mt-2 mx-12 flex-col">
           <h1 className="text-black not-italic font-sans text-justify font-light m-2 p-2 text-5xl leading-10">
             The big day is yet to come
@@ -13,6 +14,7 @@ const Home = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
+          <CountDown />
         </div>
         <div className="flex mb-12 origin-bottom-right mt-2 flex-col mx-24 flex-wrap w-1/2">
           <img
