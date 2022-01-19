@@ -1,7 +1,7 @@
 from dataclasses import field
 from pyexpat import model
 from rest_framework import serializers
-from apps.guests.models import Guests, Songs, picture, gallery, singleImages
+from apps.guests.models import Guests, Songs, formConfirmation, picture, gallery, singleImages, formConfirmation
 from apps.guests.models import DonationMessajes
 
 
@@ -33,4 +33,9 @@ class DonationMessajesSerializer(serializers.ModelSerializer):
 class singleImagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = singleImages
+        fields = '__all__'
+
+class formConfirmationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = formConfirmation
         fields = '__all__'

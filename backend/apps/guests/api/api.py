@@ -3,9 +3,9 @@ from rest_framework import status
 from rest_framework.generics import CreateAPIView, ListAPIView, ListCreateAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from apps.guests.api.serializers import SongsSerializer, gallerySerializer, guestSerializer, pictureSerializer
-from apps.guests.models import Guests, Songs, gallery, picture, singleImages
-from apps.guests.api.serializers import DonationMessajesSerializer, singleImagesSerializer
+from apps.guests.api.serializers import SongsSerializer, formConfirmationSerializer, gallerySerializer, guestSerializer, pictureSerializer
+from apps.guests.models import Guests, Songs, formConfirmation, gallery, picture, singleImages
+from apps.guests.api.serializers import DonationMessajesSerializer, singleImagesSerializer, formConfirmationSerializer
 from apps.guests.models import DonationMessajes
 from apps.guests.utils import Util
 
@@ -119,3 +119,18 @@ class getFamilyGroupAPIView(ListAPIView):
         family_num = family_num[0]['family_group']
         family_group = Guests.objects.filter(family_group = family_num).exclude(phone_number = phone)
         return family_group
+
+class FormConfirmationAPIView(ListCreateAPIView):
+    ''' Form confirmarion get/post'''
+    serializer_class = formConfirmationSerializer
+    def post(self, request):
+        form_data = request.data
+        serializer_post = self.serializer_class(data= form_data)
+        serializer_post.is_valid(raise_exception=True)
+        serializer_post.save()
+        return Response(serializer_post.data, status= status.HTTP_201_CREATED)
+
+    def get_queryset(self):
+        return formConfirmation.objects.all()
+
+        

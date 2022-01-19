@@ -4,7 +4,7 @@ from apps.guests.api.api import getGuestsAPIView, getSingleGuestAPIView
 from apps.guests.api.api import postSingleGuestAPIView, postGuestsSENDinvitationAPIView
 from apps.guests.api.api import getSongsAPIView, getPicturesGalleryAPIView
 from apps.guests.api.api import CommentDonationsAPIView, getPostSingleImagesAPIView
-from apps.guests.api.api import getFamilyGroupAPIView
+from apps.guests.api.api import getFamilyGroupAPIView, FormConfirmationAPIView
 
 
 urlpatterns = [
@@ -17,4 +17,5 @@ urlpatterns = [
     path('donation/message/', CommentDonationsAPIView.as_view(), name='donation_message'),
     path('singleImage', getPostSingleImagesAPIView.as_view(), name='singleImage'),
     path('family_group/<phone_number>', getFamilyGroupAPIView.as_view(), name='family_group'),
+    path('form_confirmation', FormConfirmationAPIView.as_view(), name='form_confirmation'),
 ]

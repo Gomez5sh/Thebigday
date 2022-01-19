@@ -1,4 +1,5 @@
 from distutils.command.upload import upload
+from tabnanny import verbose
 from django.db import models
 from django.db.models.fields import BLANK_CHOICE_DASH
 
@@ -18,7 +19,7 @@ class Guests(models.Model):
         verbose_name_plural = 'Importaciones invitados'
     
     def __str__(self):
-       return f'{self.phone_number} {self.first_name} {self.last_name}'
+       return f'{self.phone_number} {self.first_name} {self.last_name} ID = {self.id}'
 
 
 class Songs(models.Model):
@@ -60,5 +61,22 @@ class singleImages(models.Model):
     date = models.DateField('Fecha', auto_now_add=True, blank=False)
     title = models.CharField('Titulo', max_length=255, blank=False)
     message = models.TextField('Mensaje', blank=False)
+
+
+class formConfirmation(models.Model):
+    vaccine_choices = [
+        ('n_dose', 'Sin dosis'),
+        ('f_dose', 'Primera dosis'),
+        ('s_dose', 'Segunda dosis'),
+        ('t_dose', 'Tercera dosis'),
+    ]
+    guest = models.ForeignKey(to = Guests, on_delete=models.CASCADE)
+    vaccine = models.CharField(max_length=6, choices=vaccine_choices, blank=False, null=False)
+    sympton = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = 'Formulario COVID'
+        verbose_name_plural = 'Formulario COVID'
+
 
 
