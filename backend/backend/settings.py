@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.guests',
+    'corsheaders',
 
 ]
 
@@ -61,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -163,3 +165,4 @@ REST_FRAMEWORK = {
 }
 
 CELERY_BROKER_URL = env.str('CELERY_BROKER_URL'),
+CORS_ORIGIN_ALLOW_ALL = True
