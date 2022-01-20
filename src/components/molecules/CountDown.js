@@ -28,6 +28,7 @@ const CountDown = () => {
       });
     }, 1000);
   }, []);
+  
   return (
     <div className="flex justify-evenly text-center p-6">
       <div>

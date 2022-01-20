@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "tailwindcss/tailwind.css";
 import Form from "./components/molecules/form";
 import Navbar from "./components/molecules/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/molecules/Footer";
 import Home from "./components/organisms/Home";
+import Galery from "./components/molecules/Galery";
+import Drawer from "./components/organisms/Drawer";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Router>
-      <Navbar />
-      <header></header>
+      <header className="bg-white border-collapse backdrop-blur-lg fixed divide-opacity-40 shadow-lg divide-dashed">
+        <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+      </header>
       <div className="bg-white">
-        <div className="h-screen  ">
+        <div className="min-h-screen min-w-screen">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="galery" element={<h1>Galery</h1>} />
-            <Route path="signs" element={<h1>Sings</h1>} />
+            <Route path="/signs" element={<h1>Sings</h1>} />
             <Route path="/invitation/:id" element={<h1>Invitations</h1>} />
             <Route
               path="/form"
@@ -30,12 +33,14 @@ function App() {
             />
             <Route path="*" element={<h1>404</h1>} />
           </Routes>
+          <footer className="text-black p-2 mt-4">
+            <Footer />
+          </footer>
         </div>
-        {/* FOOTER */}
-        <footer className="text-black pt-20 pb-5">
-          <Footer />
-        </footer>
       </div>
+      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+        <Galery isOpen={isOpen} setIsOpen={setIsOpen} />
+      </Drawer>
     </Router>
   );
 }

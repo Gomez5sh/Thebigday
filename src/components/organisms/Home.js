@@ -1,16 +1,32 @@
 import React from "react";
 import CountDown from "../molecules/CountDown";
 import sectionOneImage from "../../assets/section-one-home.jpg";
+import axios from "axios";
 
 const Home = () => {
+  const url = process.env.REACT_APP_BACKEND;
+  const bakendExample = () => {
+    axios(url, {
+      method: "GET",
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  console.log(bakendExample());
+
   return (
-    <div>
-      <section className="flex justify-between w-full p-10 items-center ">
-        <div className="flex mb-12 origin-bottom-left w-1/3 m-2 mt-2 mx-12 flex-col">
-          <h1 className="text-black not-italic font-sans text-justify font-light m-2 p-2 text-5xl leading-10">
+    <div className="min-h-full">
+      <section className="flex justify-between w-full items-center p-2">
+        <div className="flex mb-12  justify-centerbetwee norigin-bottom-left w-1/3 m-2 mt-2 mx-12 flex-col items-center">
+          <h1 className="text-black not-italic font-sans text-justify font-light w-full m-2 p-2 text-5xl leading-10">
             The big day is yet to come
           </h1>
-          <p className="text-black not-italic font-sans m-2 p-2 text-justify font-normal text-xl leading-7">
+          <p className="text-black not-italic font-sans m-2 p-2 text-justify font-normal w-full text-xl leading-7">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -24,13 +40,13 @@ const Home = () => {
           />
         </div>
       </section>
-      <section className="text-center">
+      <section className="flex justify-between w-full items-center p-2 bg-[#9F7A6E]">
         <h1>Soy una seccion</h1>
       </section>
-      <section className="text-center">
+      <section className="flex justify-between w-full items-center p-2 bg-[#e2d7d3]">
         <h1>Soy una seccion</h1>
       </section>
-      <section className="text-center">
+      <section className="flex justify-between w-full items-center p-2 bg-[#9F7A6E]">
         <h1>Soy una seccion</h1>
       </section>
     </div>
