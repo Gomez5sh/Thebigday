@@ -12,10 +12,7 @@ const Drawer = ({ children, isOpen, setIsOpen }) => {
     >
       <section
         className={
-          "right-0 absolute bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform" +
-          (window.innerWidth > 1440
-            ? "w-screen max-w-screen-xl"
-            : "w-screen max-w-screen-lg") +
+          "right-0 w-screen absolute bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform" +
           (isOpen ? " translate-x-0 " : " translate-x-full ")
         }
       >
