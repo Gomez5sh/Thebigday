@@ -72,7 +72,13 @@ class formConfirmation(models.Model):
     ]
     guest = models.ForeignKey(to = Guests, on_delete=models.CASCADE)
     vaccine = models.CharField(max_length=6, choices=vaccine_choices, blank=False, null=False)
-    sympton = models.BooleanField(default=False)
+    vaccine_card = models.ImageField('Carnet Vacunacion', upload_to='static/images/vaccine_card', null=False, blank=False)
+    own_symptons = models.BooleanField(default=False)
+    near_symptons = models.BooleanField(default=False)
+    contact_covid_person = models.BooleanField(default=False)
+    has_fever = models.BooleanField(default=False)
+    additional_info = models.TextField('Texto adicional', blank=True)
+
 
     class Meta:
         verbose_name = 'Formulario COVID'
