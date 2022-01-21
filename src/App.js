@@ -6,10 +6,14 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/molecules/Footer";
 import Home from "./components/organisms/Home";
 import Galery from "./components/molecules/Galery";
-import Drawer from "./components/organisms/Drawer";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const actions = {
+    close: () => {
+      setIsOpen(!isOpen);
+    },
+  };
   return (
     <Router>
       <header className="bg-white border-collapse backdrop-blur-lg fixed divide-opacity-40 shadow-lg divide-dashed">
@@ -38,9 +42,7 @@ function App() {
           </footer>
         </div>
       </div>
-      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        <Galery isOpen={isOpen} setIsOpen={setIsOpen} />
-      </Drawer>
+      <Galery {...actions} isOpen={isOpen} setIsOpen={setIsOpen} />
     </Router>
   );
 }
