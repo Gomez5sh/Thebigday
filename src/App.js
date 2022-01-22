@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/molecules/Footer";
 import Home from "./components/organisms/Home";
 import Galery from "./components/molecules/Galery";
+// import Songs from "./components/molecules/Songs";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,6 +44,7 @@ function App() {
         </div>
       </div>
       <Galery {...actions} isOpen={isOpen} setIsOpen={setIsOpen} />
+      {/* <Songs {...actions} isOpen={isOpen} setIsOpen={setIsOpen} /> */}
     </Router>
   );
 }

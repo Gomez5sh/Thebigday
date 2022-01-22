@@ -28,6 +28,12 @@ const Navbar = ({ isOpen, setIsOpen }) => {
               >
                 Galery
               </li>
+              {/* <li
+                onClick={() => setIsOpen(!isOpen)}
+                className="font-sans font-family-Roboto not-italic text-xl mx-6 p-1 text-black flex items-center leading-5 line-height text-right hover:text-[#9F7A6E] transition-colors cursor-pointer"
+              >
+                Play List
+              </li> */}
               <li>
                 <NavLink
                   to="/playList"
