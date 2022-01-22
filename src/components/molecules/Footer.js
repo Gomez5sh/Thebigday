@@ -5,8 +5,8 @@ const Footer = () => {
   const date = new Date().getFullYear();
   //create a footer component
   return (
-    <div className="flex h-auto justify-between p-1 w-full items-center ">
-      <div className="flex origin-bottom-left mx-24 flex-col">
+    <div className="columns-auto h-auto p-1 w-full items-center ">
+      <div className="flex origin-bottom-left gap-15 flex-col">
         <p className="text-black not-italic font-bold leading-8 font-sans text-2xl">
           THE BIG DAY
         </p>
@@ -17,7 +17,7 @@ const Footer = () => {
           Privacy terms
         </p>
       </div>
-      <div className="flex origin-bottom-right flex-col mx-24 flex-wrap">
+      <div className="px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center origin-bottom-left gap-20">
         <p className="font-sans not-italic font-normal text-2xl leading-8">
           “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt.”

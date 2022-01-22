@@ -17,11 +17,12 @@ function App() {
   };
   return (
     <Router>
-      <header className="bg-white border-collapse backdrop-blur-lg fixed divide-opacity-40 shadow-lg divide-dashed">
+      <header className={"bg-white fixed w-full z-30 top-0 shadow-lg p-3"}>
         <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       </header>
-      <div className="bg-white">
-        <div className="min-h-screen min-w-screen">
+      <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+      <div className="pt-24">
+        <div className="min-w-screen">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signs" element={<h1>Sings</h1>} />
@@ -38,7 +39,7 @@ function App() {
             />
             <Route path="*" element={<h1>404</h1>} />
           </Routes>
-          <footer className="text-black p-2 mt-4">
+          <footer className="text-black p-2 gap-5">
             <Footer />
           </footer>
         </div>

@@ -30,7 +30,7 @@ const CountDown = () => {
   }, []);
   
   return (
-    <div className="flex justify-evenly text-center p-6">
+    <div className="flex flex-row justify-evenly text-center p-6">
       <div>
         <div className="flex justify-center text-center">
           <h3 className="bg-[#ece4e2] shadow-xl font-sans not-italic font-medium text-4xl p-5 w-20 leading-10">
