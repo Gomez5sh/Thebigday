@@ -1,23 +1,8 @@
 import React from "react";
 import CountDown from "../molecules/CountDown";
 import sectionOneImage from "../../assets/section-one-home.png";
-import axios from "axios";
 
 const Home = () => {
-  const url = process.env.REACT_APP_BACKEND;
-  const bakendExample = () => {
-    axios(url, {
-      method: "GET",
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  console.log(bakendExample());
 
   return (
     <div className="min-h-full">
