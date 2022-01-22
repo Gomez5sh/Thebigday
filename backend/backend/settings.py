@@ -157,6 +157,7 @@ STATICFILES_DIRS = [
     '/home/ubuntu/bigdayenv/lib/python3.8/site-packages/django/contrib/admin/static',
 ]
 
+print(STATIC_ROOT)
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
