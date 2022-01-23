@@ -20,8 +20,8 @@ function App() {
       <header className={"bg-white fixed w-full z-30 top-0 shadow-lg p-3"}>
         <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       </header>
-      <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
-      <div className="pt-24">
+      <hr className="border-b border-gray-100 opacity-25 my-0 py-0" />
+      <div className="pt-15">
         <div className="min-w-screen">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -39,7 +39,7 @@ function App() {
             />
             <Route path="*" element={<h1>404</h1>} />
           </Routes>
-          <footer className="text-black p-2 gap-5">
+          <footer className="bg-white">
             <Footer />
           </footer>
         </div>

@@ -15,7 +15,7 @@ class getGuestsAPIView(ListAPIView):
     queryset = Guests.objects.all()
 
     def get_queryset(self):
-        return self.queryset
+        return self.queryset.all()
 
 
 class getSingleGuestAPIView(ListAPIView):
@@ -74,7 +74,7 @@ class getSongsAPIView(ListAPIView):
     queryset = Songs.objects.all()
 
     def get_queryset(self):
-        return self.queryset
+        return self.queryset.all()
 
 class getPicturesGalleryAPIView(ListAPIView):
     ''' Get pictures of the weeding'''
@@ -83,7 +83,10 @@ class getPicturesGalleryAPIView(ListAPIView):
 
     def get_queryset(self):
         gallery_name = self.kwargs['gallery_name']
-        id_gallery = self.queryset.filter(title=gallery_name).values('id')[0]['id']
+        id_gallery = self.queryset.filter(title=gallery_name).values('id')
+        if len(id_gallery) == 0:
+            return picture.objects.none()
+        id_gallery = id_gallery[0]['id']
         return picture.objects.filter(gallery_id= id_gallery)
 
 class CommentDonationsAPIView(CreateAPIView):
