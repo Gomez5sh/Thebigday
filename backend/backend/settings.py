@@ -152,10 +152,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_URL = 'http://127.0.0.1:8000/media/'
-STATICFILES_DIRS = [
-    '/home/ubuntu/bigdayenv/lib/python3.8/site-packages/django/contrib/admin/static',
-]
+
+if DEBUG is True:
+    MEDIA_URL = 'http://127.0.0.1:8000/'
+if DEBUG is False:
+    MEDIA_URL = 'http://3.89.251.18/'
+    STATICFILES_DIRS = [
+        '/home/ubuntu/bigdayenv/lib/python3.8/site-packages/django/contrib/admin/static',
+    ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
