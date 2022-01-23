@@ -28,55 +28,55 @@ const CountDown = () => {
       });
     }, 1000);
   }, []);
-  
+
   return (
-    <div className="flex flex-row justify-evenly text-center p-6">
-      <div>
-        <div className="flex justify-center text-center">
-          <h3 className="bg-[#ece4e2] shadow-xl font-sans not-italic font-medium text-4xl p-5 w-20 leading-10">
+    <div className="w-full grid grid-flow-col auto-cols-auto mx-auto top-0">
+      <div className="justify-center text-center w-full">
+        <div className="flex justify-center text-center w-full">
+          <h3 className="bg-[#ece4e2] shadow-xl font-sans not-italic font-medium text-nd lg:text-4xl p-5 w-auto leading-10">
             {timeState.D}
           </h3>
         </div>
-        <h3 className="font-sans not-italic font-medium text-4xl m-2 leading-10">
+        <h3 className="font-sans not-italic font-medium text-md lg:text-4xl m-2 leading-10">
           D
         </h3>
       </div>
-      <p className="font-sans not-italic font-medium text-4xl p-5 leading-10">
+      <p className="font-sans not-italic font-medium text-md lg:text-4xl p-3 mx-auto lg:p-5 leading-10">
         :
       </p>
-      <div>
-        <div className="flex text-center">
-          <h3 className="bg-[#ece4e2] shadow-xl font-sans not-italic font-medium text-4xl p-5 w-20 leading-10">
+      <div className="justify-center text-center w-full">
+        <div className="flex justify-center text-center w-full">
+          <h3 className="bg-[#ece4e2] shadow-xl font-sans not-italic font-medium text-nd lg:text-4xl p-5 w-auto leading-10">
             {timeState.H}
           </h3>
         </div>
-        <h3 className="font-sans not-italic font-medium text-4xl m-2 leading-10">
+        <h3 className="font-sans not-italic font-medium text-md lg:text-4xl m-2 leading-10">
           H
         </h3>
       </div>
-      <p className="font-sans not-italic font-medium text-4xl p-5 leading-10">
+      <p className="font-sans not-italic font-medium text-md lg:text-4xl p-3 mx-auto lg:p-5 leading-10">
         :
       </p>
-      <div>
-        <div className="flex text-center">
-          <h3 className="bg-[#ece4e2] shadow-xl font-sans not-italic font-medium text-4xl p-5 w-20 leading-10">
+      <div className="justify-center text-center w-full">
+        <div className="flex justify-center text-center w-full">
+          <h3 className="bg-[#ece4e2] shadow-xl font-sans not-italic font-medium text-nd lg:text-4xl p-5 w-auto leading-10">
             {timeState.M}
           </h3>
         </div>
-        <h3 className="font-sans not-italic font-medium text-4xl m-2 leading-10">
+        <h3 className="font-sans not-italic font-medium text-md lg:text-4xl m-2 leading-10">
           M
         </h3>
       </div>
-      <p className="font-sans not-italic font-medium text-4xl p-5 leading-10">
+      <p className="font-sans not-italic font-medium text-md lg:text-4xl p-5 mx-auto leading-10">
         :
       </p>
-      <div>
-        <div className="flex text-center">
-          <h3 className="bg-[#ece4e2] shadow-xl font-sans not-italic font-medium text-4xl p-5 w-20 leading-10">
+      <div className="justify-center text-center w-full">
+        <div className="flex justify-center text-center ">
+          <h3 className="bg-[#ece4e2] shadow-xl font-sans not-italic font-medium text-nd lg:text-4xl p-5 w-auto leading-10">
             {timeState.S}
           </h3>
         </div>
-        <h3 className="font-sans not-italic font-medium text-4xl m-2 leading-10">
+        <h3 className="font-sans not-italic font-medium text-md lg:text-4xl m-2 leading-10">
           S
         </h3>
       </div>
