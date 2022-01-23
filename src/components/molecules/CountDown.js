@@ -67,7 +67,7 @@ const CountDown = () => {
           M
         </h3>
       </div>
-      <p className="font-sans not-italic font-medium text-md lg:text-4xl p-5 mx-auto leading-10">
+      <p className="font-sans not-italic font-medium text-md lg:text-4xl p-3 mx-auto lg:p-5 leading-10">
         :
       </p>
       <div className="justify-center text-center w-full">

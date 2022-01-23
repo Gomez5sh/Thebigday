@@ -5,9 +5,9 @@ const Footer = () => {
   const date = new Date().getFullYear();
   //create a footer component
   return (
-    <div class="container mx-auto px-8">
-      <div class="w-full flex flex-col md:flex-row py-6">
-        <div class="flex-auto mb-6 text-black">
+    <div className="container mx-auto px-8">
+      <div className="w-full flex flex-col md:flex-row py-6">
+        <div className="flex-auto mb-6 text-black">
           <p className="text-black not-italic font-bold leading-8 font-sans text-2xl">
             THE BIG DAY
           </p>
@@ -18,7 +18,7 @@ const Footer = () => {
             Privacy terms
           </p>
         </div>
-        <div class="flex-auto">
+        <div className="flex-auto">
           <p className="font-sans not-italic font-normal text-2xl leading-8">
             “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt.”
