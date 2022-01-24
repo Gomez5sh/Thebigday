@@ -15,6 +15,7 @@ function App() {
       setIsOpen(!isOpen);
     },
   };
+
   return (
     <Router>
       <header className={"bg-white fixed w-full z-30 top-0 shadow-lg p-3"}>

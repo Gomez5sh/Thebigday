@@ -5,9 +5,11 @@ import sectionTwoBg from "../../assets/sectioTwobg.png";
 import secrtionThreeBg from "../../assets/sectionThreebg.png";
 import sectionTwoImage from "../../assets/camera.png";
 import sectionThreeImage from "../../assets/song.png";
-import avatar from "../../assets/avatar.svg";
+import SliderHome from "../molecules/SliderHome";
 
 const Home = () => {
+
+
   return (
     <div className="min-w-screen">
       <section className="bg-white border-b py-8">
@@ -38,7 +40,7 @@ const Home = () => {
       </section>
       <section
         style={{ backgroundImage: `url('${sectionTwoBg}')` }}
-        className="flex justify-between w-full  items-center p-2 bg-[#9F7A6E] bg-no-repeat bg-center bg-cover bg-fixed lg:bg-left"
+        className="flex justify-between w-full h-full items-center p-2 bg-[#9F7A6E] bg-no-repeat bg-center bg-cover bg-fixed lg:bg-left"
       >
         <div className="container max-w-5xl mx-auto m-8">
           <div className="w-full mb-4">
@@ -71,20 +73,7 @@ const Home = () => {
         </div>
       </section>
       <section className="flex justify-center w-full items-center border-b py-8 bg-[#e2d7d3]">
-        <div className="w-full mb-4">
-          <p className="mb-3 text-black not-italic font-sans text-center font-light w-full m-2 p-2 text-2xl leading-10">
-            “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt.”
-          </p>
-          <img
-            src={avatar}
-            alt="The big day of david peralta is yet to come"
-            className="w-20 lg:h-auto mx-auto"
-          />
-          <p className="mb-3 text-black my-10 not-italic font-sans text-center font-light w-full text-md leading-5">
-            Fabricio Urueña, Vivi´s friend
-          </p>
-        </div>
+        <SliderHome />
       </section>
       <section
         style={{ backgroundImage: `url('${secrtionThreeBg}')` }}
