@@ -27,7 +27,7 @@ const SliderHome = () => {
           },
           lazyLoad: true,
           destroy: true,
-          drag   : 'free',
+          drag: "free",
         }}
       >
         {messages && messages.data ? (
@@ -44,7 +44,7 @@ const SliderHome = () => {
                     className="w-20 lg:h-auto mx-auto"
                   />
                   <p className="mb-3 text-black my-10 not-italic font-sans text-center font-light w-full text-md leading-5">
-                    {items.full_name}
+                    {`${items.full_name}, ${items.relationship}`}
                   </p>
                 </div>
               </SplideSlide>
