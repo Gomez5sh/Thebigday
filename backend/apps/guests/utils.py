@@ -11,10 +11,10 @@ class Util:
         auth_token = '2362829a755a7699a625420ab1f32172' 
         client = Client(account_sid, auth_token) 
         
-        message = client.messages.create(  
-                                    from_='+16789996078',
-                                    body=body,      
-                                    to='+57'+to
-                                ) 
-        logger.info(message.sid)
+        # message = client.messages.create(  
+        #                             from_='+16789996078',
+        #                             body=body,      
+        #                             to='+57'+to
+        #                         ) 
+        # logger.info(message.sid)
         logger.info('Sending sms to ' + to)

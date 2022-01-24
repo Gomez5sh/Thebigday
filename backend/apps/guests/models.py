@@ -43,7 +43,7 @@ class gallery(models.Model):
 
 class picture(models.Model):
     gallery = models.ForeignKey(to = gallery, on_delete=models.CASCADE)
-    file = models.ImageField('Imagen', upload_to='static/images/pictures', null=True, blank=True)
+    file = models.ImageField('Imagen', upload_to='backend/static/images/pictures', null=True, blank=True)
 
 class DonationMessajes(models.Model):
     full_name = models.CharField('Nombre Completo', max_length=255, null=False, blank=False)
@@ -57,7 +57,7 @@ class DonationMessajes(models.Model):
         return f'{self.full_name} {self.message}'
 
 class singleImages(models.Model):
-    file = models.ImageField('Imagen', upload_to='static/images/bigStory', null=False, blank=False)
+    file = models.ImageField('Imagen', upload_to='backend/static/images/bigStory', null=False, blank=False)
     date = models.DateField('Fecha', auto_now_add=True, blank=False)
     title = models.CharField('Titulo', max_length=255, blank=False)
     message = models.TextField('Mensaje', blank=False)
@@ -72,7 +72,7 @@ class formConfirmation(models.Model):
     ]
     guest = models.ForeignKey(to = Guests, on_delete=models.CASCADE)
     vaccine = models.CharField(max_length=6, choices=vaccine_choices, blank=False, null=False)
-    vaccine_card = models.ImageField('Carnet Vacunacion', upload_to='static/images/vaccine_card', null=False, blank=False)
+    vaccine_card = models.ImageField('Carnet Vacunacion', upload_to='backend/static/images/vaccine_card', null=False, blank=False)
     own_symptons = models.BooleanField(default=False)
     near_symptons = models.BooleanField(default=False)
     contact_covid_person = models.BooleanField(default=False)

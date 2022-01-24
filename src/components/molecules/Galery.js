@@ -7,14 +7,17 @@ const Galery = ({ close, isOpen, setIsOpen }) => {
 
   const [images, setImages] = useState([]);
 
+  console.log(images)
+
   useEffect(() => {
     try {
-      axios(url + "/api/v1/singleImage", {
+      axios(url + "/singleImage/", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       })
         .then((response) => {
-          setImages(response.data?.results);
+          console.log(response)
+          setImages(response.data);
         })
         .catch((error) => {
           console.log(error);
@@ -35,13 +38,7 @@ const Galery = ({ close, isOpen, setIsOpen }) => {
       tempor incididunt ut labore."
       Children={
         <div className="bg-red-200">
-          {images.map((image) => {
-            return (
-              <>
-                <h1> hola</h1>
-              </>
-            );
-          })}
+         
         </div>
       }
     />

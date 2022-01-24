@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str('SECRET_KEY'),
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=[]))
 
@@ -151,13 +151,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_URL = 'http://127.0.0.1:8000/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-
+if DEBUG is True:
+    MEDIA_URL = 'http://127.0.0.1:8000/'
+if DEBUG is False:
+    MEDIA_URL = 'http://3.89.251.18/'
+    STATICFILES_DIRS = [
+        '/home/ubuntu/bigdayenv/lib/python3.8/site-packages/django/contrib/admin/static',
+    ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
     'NON_FIELD_ERRORS_KEY':'error',
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
