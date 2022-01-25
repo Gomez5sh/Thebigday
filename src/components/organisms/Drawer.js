@@ -1,6 +1,17 @@
 import React from "react";
+import Footer from "../molecules/Footer";
+import Arrow from "../../assets/iconmonstr-arrow-left-thin.png";
+import flowers from "../../assets/flowers.svg";
 
-const Drawer = ({ children, isOpen, setIsOpen }) => {
+const Drawer = ({
+  children,
+  isOpen,
+  setIsOpen,
+  title,
+  subtitle,
+  description,
+  close,
+}) => {
   return (
     <main
       className={
@@ -16,9 +27,39 @@ const Drawer = ({ children, isOpen, setIsOpen }) => {
           (isOpen ? " translate-x-0 " : " translate-x-full ")
         }
       >
-        <article className="relative w-screen max-w-7xl pb-10 flex flex-col space-y-6 overflow-y-scroll h-full">
-          {children}
-        </article>
+        <div className="flex flex-col h-screen w-full">
+          <div className="bg-[#9F7A6E] h-auto lg:h-full w-screen lg:w-96 lg:fixed">
+            <div className="w-full bg-[#e2d7d3] gap-1">
+              <p className="font-sans not-italic font-bold text-md lg:text-2xl mx-5 leading-3 p-1 lg:leading-8">
+                {title}
+              </p>
+            </div>
+            <div className="gap-20 m-1 lg:m-5 p-1 lg:p-5">
+              <p
+                onClick={() => close()}
+                className="text-white font-sans font-normal not-italic text-md lg:text-xl leading-normal m-2 p-4 cursor-pointer hover:bg-opacity-10 transition-colors flex items-center"
+              >
+                <img src={Arrow} alt="back arrow" className="mx-1 text-white" />
+                Go Back
+              </p>
+              <p className="text-white font-light font-sans not-italic leading-4 lg:leading-10 text-xl lg:text-5xl m-1 lg:m-2 p-1 lg:p-4 ">
+                {subtitle}
+              </p>
+              <p className="text-white font-sans font-normal not-italic text-md lg:text-xl leading-normal m-1 lg:m-2 p-1 lg:p-4">
+                {description}
+              </p>
+              <img
+                src={flowers}
+                alt="flowers"
+                className=" w-1/0 lg:w-full mx-auto"
+              />
+            </div>
+          </div>
+          <div className="h-full w-full p-1 lg:pl-96">{children}</div>
+          <footer className="bg-white a p-1 w-screen absolute bottom-0">
+            <Footer />
+          </footer>
+        </div>
       </section>
       <section
         className="w-screen h-full cursor-pointer"

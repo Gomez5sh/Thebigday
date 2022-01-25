@@ -31,19 +31,26 @@ const SliderHome = () => {
         }}
       >
         {messages && messages.data ? (
-          messages.data.map((items) => {
+          messages.data.map((items, index) => {
             return (
-              <SplideSlide>
-                <div className="w-full shrink-0 snap-center">
-                  <p className="mb-3 text-black not-italic font-sans text-center font-light w-full m-2 p-2 text-2xl leading-10">
+              <SplideSlide key={items.id}>
+                <div key={index} className="w-full shrink-0 snap-center">
+                  <p
+                    key={"message" + index}
+                    className="mb-3 text-black not-italic font-sans text-center font-light w-full m-2 p-2 text-2xl leading-10"
+                  >
                     {items.message}
                   </p>
                   <img
+                    key={"avatar" + index}
                     src={avatar}
                     alt="The big day of david peralta is yet to come"
                     className="w-20 lg:h-auto mx-auto"
                   />
-                  <p className="mb-3 text-black my-10 not-italic font-sans text-center font-light w-full text-md leading-5">
+                  <p
+                    key={"fill_name" + index}
+                    className="mb-3 text-black my-10 not-italic font-sans text-center font-light w-full text-md leading-5"
+                  >
                     {`${items.full_name}, ${items.relationship}`}
                   </p>
                 </div>
@@ -52,15 +59,22 @@ const SliderHome = () => {
           })
         ) : (
           <>
-            <p className="mb-3 text-black not-italic font-sans text-center font-light w-full m-2 p-2 text-2xl leading-10">
+            <p
+              key={"empty" + 1}
+              className="mb-3 text-black not-italic font-sans text-center font-light w-full m-2 p-2 text-2xl leading-10"
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             </p>
             <img
+              key={"avatar" + 1}
               src={avatar}
               alt="The big day of david peralta is yet to come"
               className="w-20 lg:h-auto mx-auto"
             />
-            <p className="mb-3 text-black my-10 not-italic font-sans text-center font-light w-full text-md leading-5">
+            <p
+              key={"name" + 1}
+              className="mb-3 text-black my-10 not-italic font-sans text-center font-light w-full text-md leading-5"
+            >
               Harry Potter
             </p>
           </>

@@ -47,14 +47,14 @@ const Navbar = ({ isOpen, setIsOpen }) => {
             </li>
             <li
               onClick={() => setIsOpen(!isOpen)}
-              className="mr-9 no-underline hover:text-underline py-2 px-4 font-sans font-family-Roboto not-italic text-xl text-black leading-5 flex items-center line-height text-right hover:text-[#9F7A6E] transition cursor-pointer"
+              className="mr-3 no-underline hover:text-underline py-2 px-4 font-sans font-family-Roboto not-italic text-xl text-black leading-5 flex items-center line-height text-right hover:text-[#9F7A6E] transition cursor-pointer"
             >
               Galery
             </li>
             <li className="mr-3">
               <NavLink
                 to="/playList"
-                className="mr-6 font-sans font-family-Roboto not-italic text-xl text-black flex items-center leading-5 text-right line-height hover:text-[#9F7A6E] transition mx-4"
+                className="font-sans font-family-Roboto not-italic text-xl text-black flex items-center leading-5 text-right line-height hover:text-[#9F7A6E] transition mx-4"
               >
                 Play List
               </NavLink>
