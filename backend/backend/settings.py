@@ -156,7 +156,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 if DEBUG is True:
     MEDIA_URL = 'http://127.0.0.1:8000/'
 if DEBUG is False:
-    MEDIA_URL = 'http://3.89.251.18/'
+    MEDIA_URL = 'https://api.daveyviviwedding.tech/'
     STATICFILES_DIRS = [
         '/home/ubuntu/bigdayenv/lib/python3.8/site-packages/django/contrib/admin/static',
     ]
