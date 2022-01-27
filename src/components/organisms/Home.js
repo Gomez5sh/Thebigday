@@ -7,9 +7,7 @@ import sectionTwoImage from "../../assets/camera.png";
 import sectionThreeImage from "../../assets/song.png";
 import SliderHome from "../molecules/SliderHome";
 
-const Home = () => {
-
-
+const Home = ({ stataSongs, setStataSongs, isOpen, setIsOpen }) => {
   return (
     <div className="min-w-screen">
       <section className="bg-white border-b py-8">
@@ -58,7 +56,10 @@ const Home = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
-              <button className="text-white rounded-md p-1 w-full lg:w-1/2 hover:text-black hover:bg-white/50 transition-colors border-2 border-white">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-white rounded-md p-1 w-full lg:w-1/2 hover:text-black hover:bg-white/50 transition-colors border-2 border-white"
+              >
                 See more
               </button>
             </div>
@@ -102,7 +103,10 @@ const Home = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
-              <button className="text-white rounded-md p-1 w-full lg:w-1/2 hover:text-black hover:bg-white/50 transition-colors border-2 border-white">
+              <button
+                onClick={() => setStataSongs(!stataSongs)}
+                className="text-white rounded-md p-1 w-full lg:w-1/2 hover:text-black hover:bg-white/50 transition-colors border-2 border-white"
+              >
                 See more
               </button>
             </div>

@@ -6,16 +6,13 @@ import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
 const SliderHome = () => {
   const messages = useGetAxios({ endpoint: "donation/message" });
-
-  console.log(messages);
-
   return (
     <div className="mb-4 w-screen flex snap-x overflow-hidden">
       <Splide
         options={{
           rewind: true,
           type: "loop",
-          width: true,
+          width: "100%",
           pagination: false,
           easing: "ease",
           perPage: 1,
@@ -23,7 +20,10 @@ const SliderHome = () => {
           focus: "center",
           arrows: false,
           autoScroll: {
-            speed: 2,
+            speed: 4,
+          },
+          autoplay: {
+            delay: 3000,
           },
           lazyLoad: true,
           destroy: true,

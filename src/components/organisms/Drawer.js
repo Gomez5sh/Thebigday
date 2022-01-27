@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../molecules/Footer";
+//import Footer from "../molecules/Footer";
 import Arrow from "../../assets/iconmonstr-arrow-left-thin.png";
 import flowers from "../../assets/flowers.svg";
 
@@ -51,15 +51,17 @@ const Drawer = ({
               <img
                 src={flowers}
                 alt="flowers"
-                className=" w-1/0 lg:w-full mx-auto"
+                className="w-1/0 lg:w-full mx-auto"
               />
             </div>
           </div>
-          <div className="h-full w-full p-1 lg:pl-96">{children}</div>
-          <footer className="bg-white a p-1 w-screen absolute bottom-0">
-            <Footer />
-          </footer>
+          <div className="h-screen w-full content-center object-top p-1 lg:pl-96">
+            {children}
+          </div>
         </div>
+        {/*<footer className="bg-white w-screen mt-24">
+        <Footer />
+      </footer>*/}
       </section>
       <section
         className="w-screen h-full cursor-pointer"

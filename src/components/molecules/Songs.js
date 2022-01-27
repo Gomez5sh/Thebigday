@@ -1,57 +1,43 @@
-import React, { useEffect, useState } from "react";
-import DrawerLayout from "./DrawerLayout";
-import axios from "axios";
+import React from "react";
+import Drawer from "../organisms/Drawer";
+import useGetAxios from "../hooks/useGetAxios";
 
-const Songs = ({ close, isOpen, setIsOpen }) => {
-  const url = process.env.REACT_APP_BACKEND;
+const Songs = ({ stataSongs, setStataSongs, closeSongs }) => {
+  const songs = useGetAxios({ endpoint: "songs" });
 
-  const [songs, setSongs] = useState([]);
+  console.log(songs);
 
-  useEffect(() => {
-    try {
-      axios(url + "/api/v1/songs/", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((response) => {
-          setSongs(response.data?.results);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return (
-    <DrawerLayout
-      close={close}
-      isOpen={isOpen}
-      setIsOpen={setIsOpen}
+    <Drawer
+      close={closeSongs}
+      isOpen={stataSongs}
+      setIsOpen={setStataSongs}
       title="THE BIG DAY"
-      subtitle="Owr big moments in songs"
+      subtitle="Owr big moments
+      in songs"
       description="Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore."
       Children={
         <div className="bg-red-200">
-          {songs.map((song) => {
+          {/*songs.map((song) => {
             return (
               <>
-                <img src={song.image} alt="song" />
-                <div>
-                  {song.title} - {song.artist}
-                </div>
-                <div>
-                  <a href={song.song_url}>Play</a>
-                  <p>{song.duration}</p>
-                </div>
-                <div>
-                  {song.lyrics}
-                </div>
+                {songs.map((song) => (
+                  <div className="flex flex-col justify-center columns-auto p-24 items-center w-auto max-h-screen overflow-y-scroll snap snap-mandatory object-top">
+                    <img src={song.image} alt="song" />
+                    <div>
+                      {song.title} - {song.artist}
+                    </div>
+                    <div>
+                      <a href={song.song_url}>Play</a>
+                      <p>{song.duration}</p>
+                    </div>
+                    <div>{song.lyrics}</div>
+                  </div>
+                ))}
               </>
             );
-          })}
+          })*/}
         </div>
       }
     />

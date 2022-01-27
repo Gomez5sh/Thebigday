@@ -5,7 +5,6 @@ import moment from "moment";
 
 const Galery = ({ close, isOpen, setIsOpen }) => {
   const images = useGetAxios({ endpoint: "singleImage" });
-  console.log("soy images", images);
   return (
     <Drawer
       close={close}
@@ -16,30 +15,35 @@ const Galery = ({ close, isOpen, setIsOpen }) => {
       description="Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore."
       children={
-        <div className="flex flex-col gap-6 justify-center items-center p-20 w-auto max-h-screen overflow-y-scroll snap snap-mandatory">
+        <div className="flex flex-col justify-center columns-auto p-24 items-center w-auto max-h-screen overflow-y-scroll snap snap-mandatory object-top">
           {images.data.map((image, index) => {
             const date = moment(image.date._d).format("MMMM Do YYYY");
-            console.log("soy date", date);
             return (
-              <div className="flex w-full h-auto mb-24" key={index}>
-                <div className="snap-center shrink-0 w-full lg:w-1/5 p-2 rounded overflow-hidden shadow-lg h-full">
-                  <div className="h-full w-full">
-                    <div>
+              <>
+                <div class="p-4">
+                  <div className="snap-center w-full transition rounded overflow-hidden h-full">
+                    <div class=" w-full lg:max-w-full lg:flex h-full p-2">
                       <img
                         id={image.id}
                         src={image.file}
                         alt={image.message}
-                        className="aspect-video object-cover h-full w-full"
+                        className="aspect-video object-cover h-50 lg:h-auto lg:w-1/5 w-auto p-2 shadow-xl border border-gray-100"
                       />
+                      <div class="bg-white lg:rounded-r p-4 flex flex-wrap flex-col justify-between leading-normal">
+                        <div class="mb-8">
+                          <p class="text-sm text-gray-600 flex items-center">
+                            {date}
+                          </p>
+                          <div class="text-gray-900 font-bold text-xl mb-2">
+                            {image.title}
+                          </div>
+                          <p class="text-gray-700 text-base">{image.message}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <p>{date}</p>
-                  <h2 className="text-2xl font-bold">{image.title}</h2>
-                  <p>{image.message}</p>
-                </div>
-              </div>
+              </>
             );
           })}
         </div>

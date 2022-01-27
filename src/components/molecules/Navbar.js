@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 
-const Navbar = ({ isOpen, setIsOpen }) => {
+const Navbar = ({
+  isOpen,
+  setIsOpen,
+  stataDonatios,
+  setStataDonatios,
+  stataSongs,
+  setStataSongs,
+}) => {
   const [hidden, setHiden] = useState(false);
   return (
     <>
@@ -51,25 +58,21 @@ const Navbar = ({ isOpen, setIsOpen }) => {
             >
               Galery
             </li>
-            <li className="mr-3">
-              <NavLink
-                to="/playList"
-                className="font-sans font-family-Roboto not-italic text-xl text-black flex items-center leading-5 text-right line-height hover:text-[#9F7A6E] transition mx-4"
-              >
-                Play List
-              </NavLink>
+            <li
+              onClick={() => setStataSongs(!stataSongs)}
+              className="mr-6 font-sans font-family-Roboto not-italic text-xl text-black flex items-center leading-5 text-right line-height hover:text-[#9F7A6E] transition mx-4 cursor-pointer"
+            >
+              Play List
             </li>
           </ul>
-          <button>
-            <NavLink
-              to="/donations"
-              className="mr-auto lg:mx-0 bg-white 
+          <button
+            onClick={() => setStataDonatios(!stataDonatios)}
+            className="mr-auto lg:mx-0 bg-white 
                  mt-4 lg:mt-0 py-2 px-6 shadow-lg opacity-75 focus:outline-none focus:shadow transform transition hover:scale-105 duration-300 ease-in-out      
                  font-sans font-family-Roboto not-italic text-xl text-black flex leading-5 items-center text-right border-solid rounded-md border-black border 
                 hover:bg-[#9F7A6E] hover:text-white hover:border-black/10  shadow-[#9F7A6E]/30 hover:shadow-[#9F7A6E]/80"
-            >
-              Donation
-            </NavLink>
+          >
+            Donation
           </button>
         </div>
       </div>

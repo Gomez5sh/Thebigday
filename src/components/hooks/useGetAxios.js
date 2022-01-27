@@ -6,8 +6,6 @@ const useGetAxios = ({ endpoint }) => {
 
   const [data, SetData] = useState([]);
 
-  console.log(data);
-
   useEffect(() => {
     try {
       axios(url + `/${endpoint}/`, {
