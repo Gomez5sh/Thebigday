@@ -27,6 +27,7 @@ const SliderHome = () => {
           },
           lazyLoad: true,
           destroy: true,
+          center: true,
           drag: "free",
         }}
       >
