@@ -51,9 +51,6 @@ function App() {
                 />
               }
             />
-            {/*<Route path="/signs" element={<h1>Sings</h1>} />
-            <Route path="/donations" element={<Donatios />} />
-  <Route path="*" element={<h1>404</h1>} />*/}
           </Routes>
           <footer className="bg-white">
             <Footer />

@@ -23,11 +23,11 @@ const Drawer = ({
     >
       <section
         className={
-          "right-0 w-screen absolute bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform" +
+          "right-0 w-screen bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform" +
           (isOpen ? " translate-x-0 " : " translate-x-full ")
         }
       >
-        <div className="flex flex-col h-screen w-full">
+        <div className="flex flex-col h-full w-full">
           <div className="bg-[#9F7A6E] h-auto lg:h-full w-screen lg:w-96 lg:fixed">
             <div className="w-full bg-[#e2d7d3] gap-1">
               <p className="font-sans not-italic font-bold text-md lg:text-2xl mx-5 leading-3 p-1 lg:leading-8">
@@ -55,9 +55,7 @@ const Drawer = ({
               />
             </div>
           </div>
-          <div className="h-screen w-full content-center object-top p-1 lg:pl-96">
-            {children}
-          </div>
+          <main className="h-full w-full p-1 lg:pl-96">{children}</main>
         </div>
         {/*<footer className="bg-white w-screen mt-24">
         <Footer />

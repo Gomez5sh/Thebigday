@@ -48,7 +48,7 @@ const Galery = ({ close, isOpen, setIsOpen }) => {
                     >
                       <div
                         key={image.id + index}
-                        className=" w-full lg:max-w-full lg:flex h-full p-1 gap-1"
+                        className="w-full lg:max-w-full lg:flex h-full p-1 gap-1"
                       >
                         <img
                           id={image.id}
