@@ -27,17 +27,17 @@ const Songs = ({ stataSongs, setStataSongs, closeSongs }) => {
         description="Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore."
         children={
-          <article className="min-h-content w-full pb-10 flex flex-col space-y-6 overflow-y-scroll h-screen">
+          <article className="min-h-full w-full p-4 lg:pb-10 flex flex-col space-y-6 overflow-y-scroll">
             <header className="p-4 font-sans not-italic text-xl leading-6">
               Consectetur adipiscing elit
             </header>
-            <div className="flex flex-col p-4 space-y-4">
+            <div className="flex flex-col lg:p-4 lg:space-y-4">
               <h1 className="font-sans lg:p-5 mx-50 not-italic font-bold text-xl leading-10">
                 Top songs
               </h1>
             </div>
-            <div className="flex flex-col p-4 space-y-4 justify-center items-center">
-              <table className="table w-full lg:w-8/12 p-4">
+            <div className="flex flex-col lg:p-4 space-y-4 justify-center items-center">
+              <table className="table w-full lg:w-8/12">
                 <thead className="border-b-2 border-slate-900/80">
                   <tr>
                     <th className="p-3 text-sm font-sans tracking-wide text-center italic whitespace-pre leading-snug">

@@ -55,10 +55,14 @@ const Drawer = ({
               />
             </div>
           </div>
-          <main className="h-full w-full p-1 lg:pl-96">{children}</main>
+          <main className="h-full overflow-y-auto transition lg:pl-96">
+            <div className="container min-w-screen min-h-screen grid px-6 mx-auto flex-grow flex-row overflow-hidden justify-center">
+              {children}
+            </div>
+          </main>
         </div>
-        {/*<footer className="bg-white w-screen mt-24">
-        <Footer />
+        {/*<footer className="bg-white relative w-screen mt-24">
+            <Footer />
       </footer>*/}
       </section>
       <section

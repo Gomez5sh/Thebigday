@@ -13,7 +13,6 @@ const useGetAxios = ({ endpoint }) => {
         headers: { "Content-Type": "application/json" },
       })
         .then((response) => {
-          console.log(response);
           SetData(response.data);
         })
         .catch((error) => {
