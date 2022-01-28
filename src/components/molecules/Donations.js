@@ -148,12 +148,6 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
                       />
                     </div>
                     <div className="w-full px-3 m-1">
-                      <button
-                        className="bg-[#9f7a6e]/80 hover:bg-[#9f7a6e] text-white font-bold py-2 w-full px-4 rounded focus:outline-none focus:shadow-outline mb-15"
-                        onClick={onFinis}
-                      >
-                        Go to donate
-                      </button>
                       <div className="w-full form-group mb-6 m-1">
                         <label
                           className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -220,6 +214,12 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
                               </span>
                             </label>
                           </div>
+                            <button
+                              className="bg-[#9f7a6e]/80 hover:bg-[#9f7a6e] text-white font-bold py-2 w-full px-4 rounded focus:outline-none focus:shadow-outline mb-15"
+                              onClick={onFinis}
+                            >
+                              Go to donate
+                            </button>
                         </div>
                       </div>
                     </div>
