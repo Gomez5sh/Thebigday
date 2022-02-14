@@ -64,7 +64,7 @@ const SliderHome = () => {
               key={"empty" + 1}
               className="mb-3 text-black not-italic font-sans text-center font-light w-full m-2 p-2 text-2xl leading-10"
             >
-              Los amo
+              Los amamos y les deseamos lo mejor
             </p>
             <img
               key={"avatar" + 1}
@@ -76,7 +76,7 @@ const SliderHome = () => {
               key={"name" + 1}
               className="mb-3 text-black my-10 not-italic font-sans text-center font-light w-full text-md leading-5"
             >
-              Dios
+              Amigos y familia
             </p>
           </>
         )}
