@@ -45,7 +45,7 @@ const SliderHome = () => {
                   <img
                     key={"avatar" + index}
                     src={avatar}
-                    alt="The big day of david peralta is yet to come"
+                    alt="Nuestro gran día está por llegar"
                     className="w-20 lg:h-auto mx-auto"
                   />
                   <p
@@ -64,19 +64,19 @@ const SliderHome = () => {
               key={"empty" + 1}
               className="mb-3 text-black not-italic font-sans text-center font-light w-full m-2 p-2 text-2xl leading-10"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              Los amamos y les deseamos lo mejor
             </p>
             <img
               key={"avatar" + 1}
               src={avatar}
-              alt="The big day of david peralta is yet to come"
+              alt="Nuestro gran día está por llegar"
               className="w-20 lg:h-auto mx-auto"
             />
             <p
               key={"name" + 1}
               className="mb-3 text-black my-10 not-italic font-sans text-center font-light w-full text-md leading-5"
             >
-              Harry Potter
+              Amigos y familia
             </p>
           </>
         )}

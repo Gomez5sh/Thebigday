@@ -70,7 +70,7 @@ export default function Modal({
                     window.scrollTo(0, 0);
                   }}
                 >
-                  Continue
+                  Continúa
                 </button>
               </div>
             </div>

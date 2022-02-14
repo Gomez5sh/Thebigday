@@ -25,7 +25,7 @@ export default function Drawer({ children, isOpen, setIsOpen, header, close }) {
                 className="text-white font-sans font-normal not-italic text-md lg:text-xl leading-normal cursor-pointer hover:bg-opacity-10 transition-colors flex items-center"
               >
                 <img src={Arrow} alt="back arrow" className="text-white" />
-                Go Back
+                Volver
               </p>
             </div>
             {header}

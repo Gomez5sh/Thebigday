@@ -17,19 +17,22 @@ const Home = ({ stataSongs, setStataSongs, isOpen, setIsOpen }) => {
           </div>
           <div className="flex flex-wrap">
             <div className="w-5/6 sm:w-1/2 p-6">
-              <h3 className="mb-3  text-black not-italic font-sans text-justify font-light w-full m-2 p-2 text-5xl leading-10">
-                The big day is yet to come
+              <h3 className="mb-3  text-black not-italic font-sans text-left font-light w-full m-2 p-2 text-5xl leading-tight">
+                El gran día está por llegar
               </h3>
-              <p className="mb-8 text-black not-italic font-sans m-2 p-2 text-justify font-normal w-full text-xl leading-7">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                at ipsum eu nunc commodo posuere et sit amet ligula.
+              <p className="mb-8 text-black not-italic font-sans m-2 p-2 text-left font-normal w-full text-xl leading-7">
+                ¡Alégrense, habitantes de Jerusalén!
+                ¡Alégrense en el Señor su Dios!
+                Pues la lluvia que él envía demuestra su fidelidad.
+                Volverán las lluvias de otoño,
+                así como las de primavera. - Joel 2:23
               </p>
               <CountDown />
             </div>
             <div className="w-full sm:w-1/2 p-6">
               <img
                 src={sectionOneImage}
-                alt="The big day of david peralta is yet to come"
+                alt="El gran día está por llegar"
                 className="w-full sm:h-auto mx-auto"
               />
             </div>
@@ -46,27 +49,26 @@ const Home = ({ stataSongs, setStataSongs, isOpen, setIsOpen }) => {
           </div>
           <div className="flex flex-wrap">
             <div className="w-5/6 sm:w-1/2 p-6">
-              <h3 className="mb-3 text-white not-italic font-sans text-justify font-light w-full m-2 p-2 text-5xl leading-10">
-                Owr big moments
+              <h3 className="mb-3 text-white not-italic font-sans text-left font-light w-full m-2 p-2 text-5xl leading-10">
+                Nuestros mejores momentos
               </h3>
               <h3 className="mb-3 text-white bg-black w-full lg:w-1/2 text-bold not-italic font-sans text-center font-light m-2 p-2 text-5xl leading-10">
-                in photos
+                en fotos
               </h3>
-              <p className="mb-8 text-white not-italic font-sans m-2 p-2 text-justify font-normal w-full text-xl leading-7">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <p className="mb-8 text-white not-italic font-sans m-2 p-2 text-left font-normal w-full text-xl leading-7">
+                Hoy puedo decir: ¡Hasta aquí nos ha ayudado el Señor! - 1 Samuel 7:12
               </p>
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-white rounded-md p-1 w-full lg:w-1/2 hover:text-black hover:bg-white/50 transition-colors border-2 border-white"
               >
-                See more
+                Ver más
               </button>
             </div>
             <div className="w-1/2 lg:w-1/3 p-6 flex justify-center items-center mx-10 ">
               <img
                 src={sectionTwoImage}
-                alt="The big day of david peralta is yet to come"
+                alt="Nuestro gran día está por llegar"
                 className="w-full sm:h-auto"
               />
             </div>
@@ -88,26 +90,26 @@ const Home = ({ stataSongs, setStataSongs, isOpen, setIsOpen }) => {
             <div className="w-1/2 lg:w-1/3 p-6 flex justify-center items-center mx-10  ">
               <img
                 src={sectionThreeImage}
-                alt="The big day of david peralta is yet to come"
+                alt="Nuestro gran día está por llegar"
                 className="w-full sm:h-auto"
               />
             </div>
             <div className="w-5/6 lg:w-1/2 p-6">
-              <h3 className="mb-3 text-white not-italic font-sans text-justify font-light w-full m-2 p-2 text-5xl leading-10">
-                Owr big moments
+              <h3 className="mb-3 text-white not-italic font-sans text-left font-light w-full m-2 p-2 text-5xl leading-10">
+                Nuestro gran día
               </h3>
-              <h3 className="mb-3 text-white bg-black w-full lg:w-1/2 text-bold not-italic font-sans text-center font-light m-2 p-2 text-5xl leading-10">
-                in songs
+              <h3 className="mb-3 text-white bg-black w-full lg:w-1/2 text-bold not-italic font-sans text-center font-light m-2 p-2 text-4xl leading-10">
+                en canciones
               </h3>
-              <p className="mb-8 text-white not-italic font-sans m-2 p-2 text-justify font-normal w-full text-xl leading-7">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <p className="mb-8 text-white not-italic font-sans m-2 p-2 text-left font-normal w-full text-xl leading-7">
+                ¡Den gracias al Señor, porque él es bueno!
+                Su fiel amor perdura para siempre. - 1 Crónicas 16:34
               </p>
               <button
                 onClick={() => setStataSongs(!stataSongs)}
                 className="text-white rounded-md p-1 w-full lg:w-1/2 hover:text-black hover:bg-white/50 transition-colors border-2 border-white"
               >
-                See more
+                Ver más
               </button>
             </div>
           </div>

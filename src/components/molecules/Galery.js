@@ -10,10 +10,9 @@ const Galery = ({ close, isOpen, setIsOpen }) => {
       close={close}
       isOpen={isOpen}
       setIsOpen={setIsOpen}
-      title="THE BIG DAY"
-      subtitle="Owr big moments in photos"
-      description="Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore."
+      title="NUESTRO GRAN DÍA"
+      subtitle="Nuestros mejores momentos en fotos"
+      description="Hoy puedo decir: ¡Hasta aquí nos ha ayudado el Señor! - 1 Samuel 7:12"
       children={
         <article className="min-h-full w-full p-4 lg:pb-10 flex flex-col space-y-6 overflow-y-scroll">
           <header className="p-4 font-sans not-italic text-xl leading-6"></header>
