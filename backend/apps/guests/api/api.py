@@ -51,7 +51,8 @@ class postGuestsSENDinvitationAPIView(APIView):
         for guest in guests:
             sms_body = f"Hola {guest.first_name} {guest.last_name} has sido invitado a la boda de David Peralta y Viviana Sandoval que se llevará a cabo el xx/xx/xxxx"
             try:
-                Util.send_sms.delay(sms_body, guest.phone_number)
+                # Util.send_sms.delay(sms_body, guest.phone_number)
+                Util.send_sms(sms_body, guest.phone_number)
             except Exception as e:
                 message = {
                     'error': 'Error sending SMSes to all guests',
@@ -106,7 +107,7 @@ class CommentDonationsAPIView(CreateAPIView):
         return Response(serializer_get.data)
 
 
-class getPostSingleImagesAPIView(ListCreateAPIView):
+class getSingleImagesAPIView(ListAPIView):
     serializer_class = singleImagesSerializer
     queryset = singleImages.objects.all()
 

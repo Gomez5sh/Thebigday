@@ -16,7 +16,7 @@ const Navbar = ({
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div className="pl-4 flex items-center">
           <h1 className="plane-take-off font-sans mr-3 font-family:Roboto font-bold text-black leading-8 text-2xl not-italic  no-underline hover:no-underline lg:text-4xl">
-            THE BIG DAY
+           NUESTRO GRAN DÍA
           </h1>
         </div>
         <div className={"block pr-4 lg:hidden"}>
@@ -56,13 +56,13 @@ const Navbar = ({
               onClick={() => setIsOpen(!isOpen)}
               className="mr-3 no-underline hover:text-underline py-2 px-4 font-sans font-family-Roboto not-italic text-xl text-black leading-5 flex items-center line-height text-right hover:text-[#9F7A6E] transition cursor-pointer"
             >
-              Galery
+              Galería
             </li>
             <li
               onClick={() => setStataSongs(!stataSongs)}
               className="mr-6 font-sans font-family-Roboto not-italic text-xl text-black flex items-center leading-5 text-right line-height hover:text-[#9F7A6E] transition mx-4 cursor-pointer"
             >
-              Play List
+              Canciones
             </li>
           </ul>
           <button
@@ -72,7 +72,7 @@ const Navbar = ({
                  font-sans font-family-Roboto not-italic text-xl text-black flex leading-5 items-center text-right border-solid rounded-md border-black border 
                 hover:bg-[#9F7A6E] hover:text-white hover:border-black/10  shadow-[#9F7A6E]/30 hover:shadow-[#9F7A6E]/80"
           >
-            Donation
+            Donación
           </button>
         </div>
       </div>

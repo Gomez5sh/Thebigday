@@ -62,10 +62,9 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
         close={closeDonations}
         isOpen={stataDonatios}
         setIsOpen={setStataDonatios}
-        title="THE BIG DAY"
-        subtitle="Donations"
-        description="Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore."
+        title="NUESTRO GRAN DÍA"
+        subtitle="Donaciones"
+        description="Den, y recibirán. Lo que den a otros les será devuelto por completo: apretado, sacudido para que haya lugar para más, desbordante y derramado sobre el regazo. La cantidad que den determinará la cantidad que recibirán a cambio. - Lucas 6:38"
         children={
           <div className="flex flex-col h-full overflow-y-scroll snap snap-mandatory">
             <div className="contents w-full justify-center my-0 mx-auto p-6 bg-white items-center">
@@ -73,21 +72,21 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
                 <form action="form">
                   <div className="flex flex-wrap -mx-3 form-group mb-6">
                     <h1 className="font-sans text-3xl font-normal not-italic leading-10">
-                      Make a donation
+                      Realiza una donación
                     </h1>
                     <div className="w-full p-3">
                       <label
                         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                         htmlFor="grid-full-name"
                       >
-                        Personalization
+                        Deja un mensaje
                       </label>
                       <input
                         className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
                     focus:text-gray-700 focus:bg-white focus:border-[#9f7a6e] focus:outline-none"
                         id="grid-first-name"
                         type="text"
-                        placeholder="Name"
+                        placeholder="Nombre"
                         required="required"
                         onChange={(event) => {
                           setFormState({
@@ -111,23 +110,23 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
                           });
                         }}
                       >
-                        <option key="1" value="Open this select menu">
-                          Open this select menu
+                        <option key="1" value="Selecciona una opción">
+                          Selecciona una opción
                         </option>
-                        <option key="2" value="David's Friend">
-                          David's Friend
+                        <option key="2" value="Amigos de David">
+                          Amigos de David
                         </option>
-                        <option key="3" value="Vivi`s Friend">
-                          Vivi`s Friend
+                        <option key="3" value="Amigos de Vivi">
+                          Amigos de Vivi
                         </option>
-                        <option key="4" value="David's Family">
-                          David's Family
+                        <option key="4" value="Familiar de David">
+                          Familiar de David
                         </option>
-                        <option key="5" value="Vivi`s Family">
-                          Vivi`s Family
+                        <option key="5" value="Familiar de Vivi">
+                          Familiar de Vivi
                         </option>
-                        <option key="6" value="friends of the couple">
-                          friends of the couple
+                        <option key="6" value="Amigos en común">
+                          Amigos en común
                         </option>
                       </select>
                     </div>
@@ -138,7 +137,7 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
                         id="textArea"
                         rows="4"
                         required="required"
-                        placeholder="Your message"
+                        placeholder="Tu mensaje"
                         onChange={(event) => {
                           setFormState({
                             ...fomrState,
@@ -153,7 +152,7 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
                           className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                           htmlFor="grid-full-name"
                         >
-                          Donation method
+                          Método de donación
                         </label>
                         <div className="flex flex-wrap -mx-3">
                           <div className="flex p-5 w-full m-2 bg-white shadow-xl border border-solid border-gray-300 rounded">
@@ -181,7 +180,7 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
                               </span>
                               <br />
                               <span className="text-gray-700">
-                                517 265 5679
+                                3138701987
                               </span>
                             </label>
                           </div>
@@ -210,7 +209,7 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
                               </span>
                               <br />
                               <span className="text-gray-700">
-                                517 265 5679
+                                3138701987
                               </span>
                             </label>
                           </div>
@@ -218,7 +217,7 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
                               className="bg-[#9f7a6e]/80 hover:bg-[#9f7a6e] text-white font-bold py-2 w-full px-4 rounded focus:outline-none focus:shadow-outline mb-15"
                               onClick={onFinis}
                             >
-                              Go to donate
+                              Ir a donar
                             </button>
                         </div>
                       </div>
@@ -237,8 +236,8 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
         closeModal={closeModal}
         openModal={openModal}
         isOpen={isOpen}
-        title="Thanks for your Donation"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        title="Gracias por tu donación"
+        content="Deseamos que tu generosidad te bendiga a ti también."
       />
     </>
   );

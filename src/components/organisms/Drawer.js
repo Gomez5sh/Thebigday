@@ -40,7 +40,7 @@ const Drawer = ({
                 className="text-white font-sans font-normal not-italic text-md lg:text-xl leading-normal m-2 p-4 cursor-pointer hover:bg-opacity-10 transition-colors flex items-center"
               >
                 <img src={Arrow} alt="back arrow" className="mx-1 text-white" />
-                Go Back
+                Volver
               </p>
               <p className="text-white font-light font-sans not-italic leading-4 lg:leading-10 text-xl lg:text-5xl m-1 lg:m-2 p-1 lg:p-4 ">
                 {subtitle}

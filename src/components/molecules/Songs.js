@@ -22,18 +22,18 @@ const Songs = ({ stataSongs, setStataSongs, closeSongs }) => {
         close={closeSongs}
         isOpen={stataSongs}
         setIsOpen={setStataSongs}
-        title="THE BIG DAY"
-        subtitle="Owr big momentsin songs"
-        description="Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore."
+        title="NUESTRO GRAN DÍA"
+        subtitle="Nuestro gran día en canciones"
+        description="¡Den gracias al Señor, porque él es bueno!
+        Su fiel amor perdura para siempre. - 1 Crónicas 16:34"
         children={
           <article className="min-h-full w-full p-4 lg:pb-10 flex flex-col space-y-6 overflow-y-scroll">
             <header className="p-4 font-sans not-italic text-xl leading-6">
-              Consectetur adipiscing elit
+              Elige una canción
             </header>
             <div className="flex flex-col lg:p-4 lg:space-y-4">
               <h1 className="font-sans lg:p-5 mx-50 not-italic font-bold text-xl leading-10">
-                Top songs
+                Nuestras canciones
               </h1>
             </div>
             <div className="flex flex-col lg:p-4 space-y-4 justify-center items-center">
@@ -41,10 +41,10 @@ const Songs = ({ stataSongs, setStataSongs, closeSongs }) => {
                 <thead className="border-b-2 border-slate-900/80">
                   <tr>
                     <th className="p-3 text-sm font-sans tracking-wide text-center italic whitespace-pre leading-snug">
-                      # Song / Artis
+                      # Canción / Artista
                     </th>
                     <th className="p-3 text-sm font-sans tracking-wide text-center italic whitespace-pre leading-snug">
-                      Actions
+                      Acciones
                     </th>
                     <th></th>
                   </tr>
@@ -142,10 +142,10 @@ const Songs = ({ stataSongs, setStataSongs, closeSongs }) => {
               children={
                 <>
                   <h3 className="p-4 font-sans not-italic font-normal text-xl leading-6">
-                    Sing together
+                    Cantemos juntos
                   </h3>
                   <p className="p-4 font-sans not-italic font-bold text-xl leading-10">
-                    Lyrics
+                    Letras
                   </p>
                   <span className="p-4 italic whitespace-pre font-sans leading-4 text-sm">
                     {stateSong.lyrics}
