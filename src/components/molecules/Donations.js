@@ -4,6 +4,22 @@ import Drawer from "../organisms/Drawer";
 import SliderHome from "./SliderHome";
 import axios from "axios";
 import Modal from "./Modal";
+import { RadioGroup } from "@headlessui/react";
+
+function CheckIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" {...props}>
+      <circle cx={12} cy={12} r={12} fill="#fff" opacity="0.2" />
+      <path
+        d="M7 13l3 3 7-7"
+        stroke="#fff"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
   const url = process.env.REACT_APP_BACKEND;
@@ -14,6 +30,19 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
     urlRadio: "",
   });
   let [isOpen, setIsOpen] = useState(false);
+  const plans = [
+    {
+      name: "Nequi",
+      phone: "517 265 5676",
+      url: "https://recarga.nequi.com.co/bdigitalpsl/#!/",
+    },
+    {
+      name: "Daviplata",
+      phone: "517 265 5676",
+      url: "https://recarga-daviplata.epayco.co/meter-plata",
+    },
+  ];
+  const [selected, setSelected] = useState(plans[0]);
 
   function closeModal() {
     setIsOpen(false);
@@ -22,6 +51,14 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
   function openModal() {
     setIsOpen(true);
   }
+
+  const onChangeF = (event) => {
+    setSelected(event);
+    setFormState({
+      ...fomrState,
+      urlRadio: event.url,
+    });
+  };
 
   const { urlRadio } = fomrState;
 
@@ -154,71 +191,78 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
                         >
                           Método de donación
                         </label>
+
                         <div className="flex flex-wrap -mx-3">
-                          <div className="flex p-5 w-full m-2 bg-white shadow-xl border border-solid border-gray-300 rounded">
-                            <input
-                              id="radio-nequi"
-                              type="radio"
-                              name="radio-nequi"
-                              value="nequi"
-                              className="form-check-input appearance-none rounded-full h-4 w-4 border border-[#9f7a6e] bg-white checked:bg-[#9f7a6e] checked:border-[#9f7a6e] 
-                            focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                              onClick={() =>
-                                setFormState({
-                                  ...fomrState,
-                                  urlRadio:
-                                    "https://recarga.nequi.com.co/bdigitalpsl/#!/",
-                                })
-                              }
-                            />
-                            <label
-                              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 mx-2"
-                              htmlFor="grid-full-name"
-                            >
-                              <span className="text-black text-strong">
-                                Nequi
-                              </span>
-                              <br />
-                              <span className="text-gray-700">
-                                3138701987
-                              </span>
-                            </label>
+                          <div className="w-full max-w-full mx-auto mb-3">
+                            <RadioGroup value={selected} onChange={onChangeF}>
+                              <RadioGroup.Label className="sr-only">
+                                Server size
+                              </RadioGroup.Label>
+                              <div className="space-y-2">
+                                {plans.map((plan) => (
+                                  <RadioGroup.Option
+                                    key={plan.name}
+                                    value={plan}
+                                    className={({ active, checked }) =>
+                                      `${
+                                        active
+                                          ? "ring-2 ring-offset-2 ring-offset-sky-300 ring-white ring-opacity-60"
+                                          : ""
+                                      }
+                  ${
+                    checked
+                      ? "bg-blue-900 bg-opacity-75 text-white"
+                      : "bg-white"
+                  }
+                    relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none`
+                                    }
+                                  >
+                                    {({ active, checked }) => (
+                                      <>
+                                        <div className="flex items-center justify-between w-full">
+                                          <div className="flex items-center">
+                                            <div className="text-sm">
+                                              <RadioGroup.Label
+                                                as="p"
+                                                className={`font-medium  ${
+                                                  checked
+                                                    ? "text-white"
+                                                    : "text-gray-900"
+                                                }`}
+                                              >
+                                                {plan.name}
+                                              </RadioGroup.Label>
+                                              <RadioGroup.Description
+                                                as="span"
+                                                className={`inline ${
+                                                  checked
+                                                    ? "text-sky-100"
+                                                    : "text-gray-500"
+                                                }`}
+                                              >
+                                                <span>{plan.phone}</span>
+                                              </RadioGroup.Description>
+                                            </div>
+                                          </div>
+                                          {checked && (
+                                            <div className="flex-shrink-0 text-white">
+                                              <CheckIcon className="w-6 h-6" />
+                                            </div>
+                                          )}
+                                        </div>
+                                      </>
+                                    )}
+                                  </RadioGroup.Option>
+                                ))}
+                              </div>
+                            </RadioGroup>
                           </div>
-                          <div className="flex p-5 w-full m-2 bg-white shadow-xl border border-solid border-gray-300 rounded">
-                            <input
-                              id="radio-daviplata"
-                              type="radio"
-                              name="radio-daviplata"
-                              value="daviplata"
-                              className="form-check-input appearance-none rounded-full h-4 w-4 border border-[#9f7a6e] bg-white checked:bg-[#9f7a6e] checked:border-[#9f7a6e] 
-                            focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                              onClick={() =>
-                                setFormState({
-                                  ...fomrState,
-                                  urlRadio:
-                                    "https://recarga-daviplata.epayco.co/meter-plata",
-                                })
-                              }
-                            />
-                            <label
-                              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 mx-2"
-                              htmlFor="grid-full-name"
-                            >
-                              <span className="text-black text-strong">
-                                Daviplata
-                              </span>
-                              <br />
-                              <span className="text-gray-700">
-                                3138701987
-                              </span>
-                            </label>
-                          </div>
-                            <button
-                              className="bg-[#9f7a6e]/80 hover:bg-[#9f7a6e] text-white font-bold py-2 w-full px-4 rounded focus:outline-none focus:shadow-outline mb-15"
-                              onClick={onFinis}
-                            >
-                              Ir a donar
-                            </button>
+                          <button
+                            className="bg-[#9f7a6e]/80 hover:bg-[#9f7a6e] text-white font-bold py-2 w-full px-4 rounded focus:outline-none focus:shadow-outline mb-15"
+                            onClick={onFinis}
+                          >
+                            Ir a donar
+                          </button>
                         </div>
                       </div>
                     </div>
