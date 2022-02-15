@@ -53,10 +53,11 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
   }
 
   const onChangeF = (event) => {
+    console.log(event);
     setSelected(event);
     setFormState({
       ...fomrState,
-      urlRadio: event.url,
+      urlRadio: event,
     });
   };
 
@@ -202,7 +203,7 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
                                 {plans.map((plan) => (
                                   <RadioGroup.Option
                                     key={plan.name}
-                                    value={plan}
+                                    value={plan.url}
                                     className={({ active, checked }) =>
                                       `${
                                         active
