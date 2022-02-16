@@ -38,7 +38,7 @@ const SliderHome = () => {
                 <div key={index} className="w-full shrink-0 snap-center">
                   <p
                     key={"message" + index}
-                    className="mb-3 text-black not-italic font-sans text-center font-light w-full m-2 p-2 text-2xl leading-10"
+                    className="mb-3 text-black not-italic font-sans text-center font-light mx-auto w-96 m-2 p-2 text-2xl leading-10 truncate"
                   >
                     {items.message}
                   </p>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "tailwindcss/tailwind.css";
 import Drawer from "../organisms/Drawer";
 import SliderHome from "./SliderHome";
@@ -44,6 +44,10 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
   ];
   const [selected, setSelected] = useState(plans[0]);
 
+  useEffect(() => {
+    if (stataDonatios === false) setSelected(plans[0]);
+  }, []);
+
   function closeModal() {
     setIsOpen(false);
   }
@@ -53,7 +57,6 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
   }
 
   const onChangeF = (event) => {
-    console.log(event);
     setSelected(event);
     setFormState({
       ...fomrState,
@@ -85,6 +88,7 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
             message: "",
           });
           closeDonations();
+          setSelected(plans[0]);
           openModal();
         })
         .catch((error) => {
