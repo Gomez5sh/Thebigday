@@ -34,12 +34,12 @@ const Donations = ({ stataDonatios, setStataDonatios, closeDonations }) => {
   const plans = [
     {
       name: "Nequi",
-      phone: "517 265 5676",
+      phone: "3138701987",
       url: "https://recarga.nequi.com.co/bdigitalpsl/#!/",
     },
     {
       name: "Daviplata",
-      phone: "517 265 5676",
+      phone: "3138701987",
       url: "https://recarga-daviplata.epayco.co/meter-plata",
     },
   ];
