@@ -21,7 +21,7 @@ const Galery = ({ close, isOpen, setIsOpen }) => {
             images.data.map((image, index) => {
               const date = moment(image.date._d).format("MMMM Do YYYY");
               return (
-                <div key={index + "galery" + image.id} className="p-4">
+                <div key={index + "galery" + image.id} className="lg:p-4">
                   {" "}
                   <div
                     key={image.id + index + "galery"}
@@ -37,7 +37,7 @@ const Galery = ({ close, isOpen, setIsOpen }) => {
                         alt={image.message}
                         key={index}
                         onClick={() => window.open(image.file, "", "_blank")}
-                        className="aspect-video object-cover h-50 lg:h-auto lg:w-1/5 w-auto p-2 shadow-xl border border-gray-100 cursor-pointer hover:shadow-2xl  "
+                        className="aspect-video object-cover h-50 lg:h-auto lg:w-1/5 w-auto md:p-2 shadow-xl border border-gray-100 cursor-pointer hover:shadow-2xl  "
                       />
                       <div
                         key={image.id + index + "mesage"}
